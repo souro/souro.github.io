@@ -62,7 +62,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : profile.png # Open Graph/Twitter default site image
+og_image                 : image.jpg # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -83,7 +83,7 @@ analytics:
 # Site Author
 author:
   name             : "Sourabrata Mukherjee"
-  avatar           : "profile.png"
+  avatar           : "image.jpg"
   bio              : "Ph.D. Candidate"
   location         : "Prague, Czech Republic"
   employer         : "Institute of Formal and Applied Linguistics, Charles University"
