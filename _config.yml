@@ -86,7 +86,7 @@ author:
   avatar           : "image.jpg"
   bio              : "Ph.D. Candidate"
   location         : "Prague, Czech Republic"
-  employer         : "Institute of Formal and Applied Linguistics, Charles University"
+  employer         : "Charles University"
   pubmed           :
   orcid            : "https://orcid.org/0000-0002-1713-2769"
   googlescholar    : "https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en&oi=ao"
@@ -117,7 +117,7 @@ author:
   vine             :
   weibo            :
   xing             :
-  youtube          : "@souro_m"
+  youtube          : #"@souro_m"
   wikipedia        :
 
 
