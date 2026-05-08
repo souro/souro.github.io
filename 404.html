@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Sourabrata Mukherjee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <style>
+    .err { min-height: 70vh; display: grid; place-content: center; text-align: center; padding: 4rem 1.25rem; }
+    .err h1 { font-size: clamp(3rem, 10vw, 6rem); margin: 0 0 0.5rem; }
+    .err p  { color: var(--ink-soft); }
+    .err code { font-size: 0.78rem; }
+  </style>
+</head>
+<body>
+  <div class="err">
+    <div>
+      <span class="section-eyebrow">404</span>
+      <h1>Lost in translation.</h1>
+      <p>The page you wanted isn't here. <a href="/">Go home →</a></p>
+    </div>
+  </div>
+</body>
+</html>
