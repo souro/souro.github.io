@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sourabrata Mukherjee — Postdoctoral Researcher, Microsoft Research</title>
-  <meta name="description" content="Sourabrata Mukherjee is a postdoctoral researcher at Microsoft Research working on language models, multilingual & cultural NLP, controllable text generation, and LLM evaluation." />
+  <title>Sourabrata Mukherjee — NLP & LLM Researcher, Microsoft Research</title>
+  <meta name="description" content="Sourabrata Mukherjee is a postdoctoral researcher at Microsoft Research working on LLM evaluation, multilingual & cultural NLP, controllable generation, reasoning, and agentic AI." />
   <meta name="author" content="Sourabrata Mukherjee" />
 
   <link rel="canonical" href="https://souro.github.io/" />
   <meta property="og:title" content="Sourabrata Mukherjee" />
-  <meta property="og:description" content="Postdoctoral Researcher at Microsoft Research. Language AI, multilingual NLP, controllable generation, LLM evaluation." />
+  <meta property="og:description" content="Postdoctoral Researcher at Microsoft Research. NLP–LLM research & applied AI: evaluation, multilingual NLP, controllable generation, reasoning, agentic systems." />
   <meta property="og:image" content="https://souro.github.io/images/image.jpg" />
   <meta property="og:type" content="profile" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="images/favicon.ico" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" />
@@ -22,7 +23,6 @@
 
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- early theme detection to avoid flash -->
   <script>
     (function () {
       try {
@@ -35,23 +35,46 @@
 </head>
 <body>
 
+<div class="bg-fx" aria-hidden="true"><div class="orb3"></div></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand">Sourabrata&nbsp;Mukherjee</a>
+    <a href="#top" class="nav-brand"><span class="mark">SM</span> Sourabrata&nbsp;Mukherjee</a>
     <nav class="nav-links" aria-label="primary">
+      <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
-      <a href="#blog">Writing</a>
-      <a href="files/pdf/Resume_Sourabrata.pdf" class="nav-cta">CV</a>
+      <a href="#awards">Awards</a>
+      <a href="files/pdf/Resume_Sourabrata.pdf" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        CV
+      </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </nav>
   </div>
 </header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#experience">Experience</a>
+  <a href="#awards">Awards</a>
+  <a href="files/pdf/Resume_Sourabrata.pdf">Curriculum Vitae</a>
+</div>
 
 <main id="top">
 
@@ -60,379 +83,433 @@
   <div class="container wide">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Postdoctoral Researcher</span>
-        <h1>Sourabrata<br/>Mukherjee</h1>
-        <p class="hero-tagline">Studying how language models understand, generate, and reason across languages and cultures.</p>
-        <div class="hero-meta">
-          <span><strong style="color:var(--ink)">Microsoft Research</strong></span>
-          <span class="dot">•</span>
-          <span>Ph.D., Charles University</span>
-          <span class="dot">•</span>
-          <span>India / Prague</span>
+        <span class="status-pill"><span class="dot-live"></span> Postdoctoral Researcher · Microsoft Research</span>
+        <h1><span class="line">Sourabrata</span><span class="line grad">Mukherjee</span></h1>
+        <p class="hero-tagline">Building and evaluating language models that work across the world's languages, cultures, and real-world constraints.</p>
+
+        <div class="hero-roles">
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2zM9 22h6"/></svg>
+            NLP–LLM Researcher
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            Applied AI
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.3-7-10a7 7 0 0 1 14 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+            Bengaluru, India
+          </span>
         </div>
+
+        <div class="hero-actions">
+          <a href="files/pdf/Resume_Sourabrata.pdf" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Download CV
+          </a>
+          <a href="#publications" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            View Research
+          </a>
+        </div>
+
         <div class="socials">
-          <a href="mailto:soura1990@gmail.com" aria-label="Email">
+          <a href="mailto:soura1990@gmail.com" aria-label="Email" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Email
           </a>
-          <a href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 10.5V16c0 1 3 3 6 3s6-2 6-3v-5.5"/></svg>
-            Scholar
+          <a href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.8 3.6A8 8 0 0 1 12 9a8 8 0 0 1 7.2 4.1L24 9.5z"/></svg>
           </a>
-          <a href="https://github.com/souro" target="_blank" rel="noopener">
+          <a href="https://github.com/souro" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-            GitHub
           </a>
-          <a href="https://www.linkedin.com/in/souro" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/souro" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.92 0h4.36v1.92h.06c.6-1.14 2.07-2.34 4.27-2.34 4.56 0 5.4 3 5.4 6.9V22h-4.56v-6.7c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54V22H8.14V8z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://orcid.org/0000-0002-1713-2769" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM7.4 17.5H5.7V7.4h1.7v10.1zM6.5 6.4c-.5 0-1-.5-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm12 11.1h-3.4c-3 0-4.6-2.2-4.6-5.1 0-3.2 1.8-5.1 4.6-5.1h3.4v10.2zm-1.7-1.6V8.9h-1.6c-2.1 0-3.3 1.4-3.3 3.5 0 2.4 1.5 3.5 3.4 3.5h1.5z"/></svg>
-            ORCID
           </a>
         </div>
       </div>
+
       <div class="hero-photo-wrap">
-        <img src="images/image.jpg" alt="Portrait of Sourabrata Mukherjee" class="hero-photo" />
+        <div class="hero-photo-frame">
+          <img src="images/image.jpg" alt="Portrait of Sourabrata Mukherjee" class="hero-photo" />
+          <div class="hero-badge b-1"><span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span> Charles University</div>
+          <div class="hero-badge b-2"><span class="b-ico">6+</span> yrs ML engineering</div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section style="padding-top:0" class="reveal">
+  <div class="container wide">
+    <div class="stats">
+      <div class="stat"><div class="stat-num"><span class="grad" data-count="11">11</span>+</div><div class="stat-label">Peer-reviewed papers</div></div>
+      <div class="stat"><div class="stat-num"><span class="grad" data-count="6">6</span>+</div><div class="stat-label">Years in industry ML</div></div>
+      <div class="stat"><div class="stat-num"><span class="grad" data-count="4">4</span></div><div class="stat-label">Research labs worldwide</div></div>
+      <div class="stat"><div class="stat-num"><span class="grad" data-count="1">1</span></div><div class="stat-label">Best Paper Award</div></div>
     </div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about" class="about reveal">
-  <div class="container">
-    <span class="section-eyebrow">About</span>
-    <div>
-      <p>I am a <strong>postdoctoral researcher at Microsoft Research</strong>, working on language models with a focus on multilingual and cultural understanding, controllable generation, and the evaluation of large models.</p>
-      <p>I recently completed my <strong>Ph.D. in Computational Linguistics</strong> at the Institute of Formal and Applied Linguistics, <a href="https://cuni.cz/uken-1.html" target="_blank" rel="noopener">Charles University</a> in Prague, where I was advised by <a href="https://ufal.mff.cuni.cz/ondrej-dusek" target="_blank" rel="noopener">Prof. Ondřej Dušek</a>. My dissertation, <em>Text Style Transfer using Neural Models</em>, develops methods for rewriting text under attribute constraints — formality, sentiment, politeness, toxicity — across high- and low-resource languages.</p>
-      <p>Before the Ph.D., I spent over five years building production ML and analytics systems as a software and machine‑learning engineer in industry, and I held research roles at <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener">UKP Lab (TU Darmstadt)</a>, <a href="https://mbzuai.ac.ae/" target="_blank" rel="noopener">MBZUAI</a> with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank" rel="noopener">Prof. Monojit Choudhury</a>, and <a href="http://panlingua.co.in/" target="_blank" rel="noopener">Panlingua</a>. I hold an M.Tech from <a href="https://nitdgp.ac.in/" target="_blank" rel="noopener">NIT Durgapur</a>.</p>
+<section id="about" class="reveal">
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">About</span>
+      <h2 class="section-title">Bridging research and engineering</h2>
+    </div>
+    <div class="about-grid about">
+      <div>
+        <p>I am a <strong>postdoctoral researcher at Microsoft Research</strong>, working with <a href="https://www.microsoft.com/en-us/research/people/susitara/" target="_blank" rel="noopener">Sunayana Sitaram</a> and <a href="https://www.microsoft.com/en-us/research/people/kalikab/" target="_blank" rel="noopener">Kalika Bali</a> on language models, with a focus on <strong>LLM evaluation</strong>, multilingual &amp; cultural understanding, controllable generation, reasoning, and agentic systems.</p>
+        <p>I completed my <strong>Ph.D. in Computational Linguistics</strong> at UFAL, <a href="https://cuni.cz/uken-1.html" target="_blank" rel="noopener">Charles University</a> in Prague, advised by <a href="https://ufal.mff.cuni.cz/ondrej-dusek" target="_blank" rel="noopener">Prof. Ondřej Dušek</a>. My dissertation, <em>Text Style Transfer using Neural Models</em>, develops methods for rewriting text under attribute constraints — formality, sentiment, politeness, toxicity — across high- and low-resource languages.</p>
+        <p>Before the Ph.D., I spent <strong>6+ years</strong> building production ML and analytics systems as a software and machine-learning engineer, and I held research roles at <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener">UKP Lab (TU Darmstadt)</a> with <a href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/head_ukp/index.en.jsp" target="_blank" rel="noopener">Prof. Iryna Gurevych</a>, <a href="https://mbzuai.ac.ae/" target="_blank" rel="noopener">MBZUAI</a> with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank" rel="noopener">Prof. Monojit Choudhury</a>, <a href="http://panlingua.co.in/" target="_blank" rel="noopener">Panlingua</a>, and <a href="https://iisc.ac.in/" target="_blank" rel="noopener">IISc</a>. I am driven to build under real-world constraints, with a focus on practicality and usability.</p>
+      </div>
+      <aside class="about-card">
+        <h4>At a glance</h4>
+        <div class="fact">
+          <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span>
+          <span class="f-text"><strong>Microsoft Research</strong>Postdoctoral Researcher</span>
+        </div>
+        <div class="fact">
+          <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span>
+          <span class="f-text"><strong>Ph.D., Charles University</strong>Computational Linguistics, Prague</span>
+        </div>
+        <div class="fact">
+          <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.3-7-10a7 7 0 0 1 14 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
+          <span class="f-text"><strong>Bengaluru, India</strong>Open to research &amp; applied-AI collaboration</span>
+        </div>
+        <div class="fact">
+          <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 8-8M14 7h7v7"/></svg></span>
+          <span class="f-text"><strong>6+ years in industry</strong>ML engineering &amp; development experience</span>
+        </div>
+        <div class="fact">
+          <span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 8a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8M10 12h4"/></svg></span>
+          <span class="f-text"><strong>Languages</strong>Bengali · English · Hindi · Czech · German</span>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ============ INTERESTS ============ -->
+<!-- ============ RESEARCH INTERESTS ============ -->
 <section id="research" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Research interests</span>
-    <h2 class="section-title">What I work on</h2>
-    <p>I build and study language technology that is <strong>useful across the world's languages</strong> — not only the few well‑resourced ones. My recent work spans:</p>
-    <div class="tags" style="margin-top:1.3rem">
-      <span class="tag">Large Language Models</span>
-      <span class="tag">Multilingual &amp; Cultural NLP</span>
-      <span class="tag">LLM Evaluation</span>
-      <span class="tag">LLM‑as‑a‑Judge</span>
-      <span class="tag">Controllable Text Generation</span>
-      <span class="tag">Text Style Transfer</span>
-      <span class="tag">Low‑Resource NLP</span>
-      <span class="tag">Conversational AI</span>
-      <span class="tag">Machine Translation</span>
-      <span class="tag">Reasoning</span>
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">Research</span>
+      <h2 class="section-title">What I work on</h2>
+      <p class="section-lead">Language technology that is useful across the world's languages — not only the few well-resourced ones — and trustworthy enough to evaluate, control, and reason about.</p>
+    </div>
+    <div class="bento">
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M21 12a9 9 0 1 1-6.2-8.5"/></svg></div>
+        <h3>LLM Evaluation &amp; LLM-as-Judge</h3>
+        <p>Reliable, human-aligned ways to measure what models actually do.</p>
+      </article>
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+        <h3>Controllable Text Generation</h3>
+        <p>Steering attributes — formality, sentiment, politeness, toxicity.</p>
+      </article>
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4M7 8h6M7 11h10"/></svg></div>
+        <h3>Text Style Transfer</h3>
+        <p>Rewriting text under attribute constraints across languages.</p>
+      </article>
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+        <h3>Multilingual &amp; Cultural NLP</h3>
+        <p>Models that respect linguistic and cultural diversity.</p>
+      </article>
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2zM9 22h6"/></svg></div>
+        <h3>Reasoning</h3>
+        <p>Probing and improving how models reason and stay consistent.</p>
+      </article>
+      <article class="bento-card">
+        <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg></div>
+        <h3>Agentic Development</h3>
+        <p>Tool-using agents and their cross-lingual robustness.</p>
+      </article>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="skillTrack">
+        <!-- duplicated in JS for seamless loop -->
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ NEWS ============ -->
 <section id="news" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">News</span>
-    <h2 class="section-title">Recent updates</h2>
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">News</span>
+      <h2 class="section-title">Recent updates</h2>
+    </div>
     <ul class="news-list">
-      <li>
-        <span class="news-date">2026 · now</span>
-        <span class="news-text">Joined <strong>Microsoft Research</strong> as a postdoctoral researcher, working on language AI &amp; multilingual evaluation.</span>
-      </li>
-      <li>
-        <span class="news-date">2025</span>
-        <span class="news-text">Successfully defended my Ph.D. thesis <em>“Text Style Transfer using Neural Models”</em> at Charles University, Prague.</span>
-      </li>
-      <li>
-        <span class="news-date">2024 · summer</span>
-        <span class="news-text">Research internship at <strong>MBZUAI</strong> (Abu Dhabi) on culture‑aware LLMs with Prof. Monojit Choudhury.</span>
-      </li>
-      <li>
-        <span class="news-date">2024 · jul</span>
-        <span class="news-text">Two papers accepted at <a href="https://inlg2024.github.io/" target="_blank" rel="noopener">INLG 2024</a> — multilingual style transfer for Indian languages, and an evaluation of LLMs at style transfer.</span>
-      </li>
-      <li>
-        <span class="news-date">2023 · dec</span>
-        <span class="news-text"><strong>Best Paper Award</strong> at the BLP Workshop, EMNLP 2023, for low‑resource Bangla style transfer.</span>
-      </li>
-      <li>
-        <span class="news-date">2023</span>
-        <span class="news-text">Awarded the <strong>Charles University Grant Agency (GAUK)</strong> research grant as PI; completed with honourable mention.</span>
-      </li>
+      <li><span class="news-date">2025 · now</span><span class="news-text">Joined <strong>Microsoft Research</strong> as a postdoctoral researcher — language AI, multilingual evaluation, and controllable generation.</span></li>
+      <li><span class="news-date">2026</span><span class="news-text"><em>Building Benchmarks from the Ground Up</em> received an <strong>Honorable Mention</strong> at CHI 2026.</span></li>
+      <li><span class="news-date">2025</span><span class="news-text">Successfully defended my Ph.D. thesis <em>“Text Style Transfer using Neural Models”</em> at Charles University, Prague.</span></li>
+      <li><span class="news-date">2025</span><span class="news-text">Paper on honorific usage in Wikipedia and LLMs for Bengali &amp; Hindi accepted to <strong>EMNLP 2025</strong> (Main).</span></li>
+      <li><span class="news-date">2024</span><span class="news-text">Visiting research scientist at <strong>MBZUAI</strong> (Abu Dhabi) on culture-aware LLMs with Prof. Monojit Choudhury.</span></li>
+      <li><span class="news-date">2023</span><span class="news-text"><strong>Best Paper Award</strong> at the BLP Workshop, EMNLP 2023, for low-resource Bangla style transfer.</span></li>
     </ul>
   </div>
 </section>
 
 <!-- ============ PUBLICATIONS ============ -->
 <section id="publications" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Selected publications</span>
-    <h2 class="section-title">Papers</h2>
-    <p style="margin-bottom:1.6rem">A complete and up‑to‑date list lives on <a href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>. Below are selected works (* indicates equal contribution where applicable).</p>
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">Selected publications</span>
+      <h2 class="section-title">Papers</h2>
+      <p class="section-lead">A complete, up-to-date list lives on <a href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>. Below are selected recent works.</p>
+    </div>
 
-    <article class="pub">
-      <div class="pub-num">01</div>
-      <div>
-        <h3 class="pub-title">Multilingual Text Style Transfer: Datasets &amp; Models for Indian Languages</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Atul Kr. Ojha, Akanksha Bansal, Deepak Alok, John P. McCrae, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of INLG 2024 — 17th International Natural Language Generation Conference</em><span class="pub-badge year">2024</span></div>
-      </div>
-    </article>
+    <div class="pub-list">
+      <article class="pub">
+        <div class="pub-num">01</div>
+        <div>
+          <h3 class="pub-title">Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings</h3>
+          <div class="pub-venue"><em>Proceedings of CHI 2026</em><span class="pub-badge award">★ Honorable Mention</span><span class="pub-badge year">2026</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">02</div>
+        <div>
+          <h3 class="pub-title">Women, Infamous, and Exotic Beings: A Comparative Study of Honorific Usages in Wikipedia and LLMs for Bengali and Hindi</h3>
+          <div class="pub-venue"><em>Proceedings of EMNLP 2025 (Main)</em><span class="pub-badge year">2025</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">03</div>
+        <div>
+          <h3 class="pub-title">Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use</h3>
+          <div class="pub-venue"><em>COLM 2026</em><span class="pub-badge soon">Under review</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">04</div>
+        <div>
+          <h3 class="pub-title">The Geometry of LLM-as-Judge: Why Inter-LLM Consensus Is Not Human Alignment</h3>
+          <div class="pub-venue"><em>EMNLP 2026</em><span class="pub-badge soon">Under review</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">05</div>
+        <div>
+          <h3 class="pub-title">Are Large Language Models Actually Good at Text Style Transfer?</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Atul Kr. Ojha, Ondřej Dušek</p>
+          <div class="pub-venue"><em>Proceedings of INLG 2025</em><span class="pub-badge year">2025</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">06</div>
+        <div>
+          <h3 class="pub-title">Evaluating Text Style Transfer Evaluation: Are There Any Reliable Metrics?</h3>
+          <div class="pub-venue"><em>NAACL 2025 — Student Research Workshop</em><span class="pub-badge year">2025</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">07</div>
+        <div>
+          <h3 class="pub-title">Multilingual Text Style Transfer: Datasets &amp; Models for Indian Languages</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Atul Kr. Ojha, Akanksha Bansal, Deepak Alok, John P. McCrae, Ondřej Dušek</p>
+          <div class="pub-venue"><em>Proceedings of INLG 2024</em><span class="pub-badge year">2024</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">08</div>
+        <div>
+          <h3 class="pub-title">A Survey of Text Style Transfer: Applications and Ethical Implications</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Mateusz Lango, Zdeněk Kasner, Ondřej Dušek</p>
+          <div class="pub-venue"><em>Northern European Journal of Language Technology (NEJLT)</em><span class="pub-badge year">2024</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">09</div>
+        <div>
+          <h3 class="pub-title">Low-Resource Text Style Transfer for Bangla: Data &amp; Models</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Akanksha Bansal, Pritha Majumdar, Atul Kr. Ojha, Ondřej Dušek</p>
+          <div class="pub-venue"><em>BLP Workshop, EMNLP 2023</em><span class="pub-badge award">★ Best Paper</span><span class="pub-badge year">2023</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">10</div>
+        <div>
+          <h3 class="pub-title">Polite Chatbot: A Text Style Transfer Application</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Vojtěch Hudeček, Ondřej Dušek</p>
+          <div class="pub-venue"><em>EACL 2023 — Student Research Workshop</em><span class="pub-badge year">2023</span></div>
+        </div>
+      </article>
+      <article class="pub">
+        <div class="pub-num">11</div>
+        <div>
+          <h3 class="pub-title">Balancing the Style-Content Trade-off in Sentiment Transfer using Polarity-Aware Denoising</h3>
+          <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Zdeněk Kasner, Ondřej Dušek</p>
+          <div class="pub-venue"><em>Int. Conference on Text, Speech, and Dialogue (TSD)</em><span class="pub-badge year">2022</span></div>
+        </div>
+      </article>
+    </div>
 
-    <article class="pub">
-      <div class="pub-num">02</div>
-      <div>
-        <h3 class="pub-title">Are Large Language Models Actually Good at Text Style Transfer?</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Atul Kr. Ojha, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of INLG 2024</em><span class="pub-badge year">2024</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">03</div>
-      <div>
-        <h3 class="pub-title">A Survey of Text Style Transfer: Applications and Ethical Implications</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Mateusz Lango, Zdeněk Kasner, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Northern European Journal of Language Technology (NEJLT)</em><span class="pub-badge year">2024</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">04</div>
-      <div>
-        <h3 class="pub-title">Text Style Transfer: An Introductory Overview</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Ondřej Dušek</p>
-        <div class="pub-venue"><em>4EU+ International Workshop on Recent Advancements in Artificial Intelligence</em><span class="pub-badge year">2024</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">05</div>
-      <div>
-        <h3 class="pub-title">Low‑Resource Text Style Transfer for Bangla: Data &amp; Models</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Akanksha Bansal, Pritha Majumdar, Atul Kr. Ojha, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of the First Workshop on Bangla Language Processing (BLP), EMNLP 2023</em><span class="pub-badge award">★ Best Paper</span><span class="pub-badge year">2023</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">06</div>
-      <div>
-        <h3 class="pub-title">Text Detoxification as Style Transfer in English and Hindi</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Akanksha Bansal, Atul Kr. Ojha, John P. McCrae, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of ICON 2023 — 20th International Conference on Natural Language Processing</em><span class="pub-badge year">2023</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">07</div>
-      <div>
-        <h3 class="pub-title">Leveraging Low‑resource Parallel Data for Text Style Transfer</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of INLG 2023</em><span class="pub-badge year">2023</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">08</div>
-      <div>
-        <h3 class="pub-title">Polite Chatbot: A Text Style Transfer Application</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Vojtěch Hudeček, Ondřej Dušek</p>
-        <div class="pub-venue"><em>Proceedings of EACL 2023 — Student Research Workshop</em><span class="pub-badge year">2023</span></div>
-      </div>
-    </article>
-
-    <article class="pub">
-      <div class="pub-num">09</div>
-      <div>
-        <h3 class="pub-title">Balancing the Style‑Content Trade‑off in Sentiment Transfer using Polarity‑Aware Denoising</h3>
-        <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Zdeněk Kasner, Ondřej Dušek</p>
-        <div class="pub-venue"><em>International Conference on Text, Speech, and Dialogue (TSD)</em><span class="pub-badge year">2022</span></div>
-      </div>
-    </article>
-
-    <a class="view-all" href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">view all on google scholar</a>
+    <a class="view-all" href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">
+      View all on Google Scholar
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
   </div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Experience</span>
-    <h2 class="section-title">Where I've been</h2>
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">Experience</span>
+      <h2 class="section-title">Research &amp; software development</h2>
+    </div>
     <ul class="timeline">
       <li class="current">
-        <div class="exp-row">
-          <p class="exp-role">Postdoctoral Researcher <span class="exp-org">— Microsoft Research</span></p>
-          <span class="exp-date">2026 — present</span>
-        </div>
-        <p class="exp-detail">Language AI: multilingual &amp; cultural NLP, LLM evaluation and LLM‑as‑a‑judge, controllable generation.</p>
+        <div class="exp-row"><p class="exp-role">Postdoctoral Researcher <span class="exp-org">— Microsoft Research</span></p><span class="exp-date">2025 — present</span></div>
+        <p class="exp-detail">Multilingual NLP, LLM evaluation, and controllable generation for Language AI.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Ph.D. in Computational Linguistics <span class="exp-org">— Charles University, Prague</span></p>
-          <span class="exp-date">2019 — 2025</span>
-        </div>
-        <p class="exp-detail">Institute of Formal and Applied Linguistics. Advisor: Prof. Ondřej Dušek. Thesis: <em>Text Style Transfer using Neural Models</em>.</p>
+        <div class="exp-row"><p class="exp-role">Visiting Research Scientist <span class="exp-org">— MBZUAI</span></p><span class="exp-date">2024 — 2025</span></div>
+        <p class="exp-detail">Cultural and cross-lingual dimensions of large language models, with Prof. Monojit Choudhury.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Visiting Researcher (Internship) <span class="exp-org">— MBZUAI, Abu Dhabi</span></p>
-          <span class="exp-date">Summer 2024</span>
-        </div>
-        <p class="exp-detail">Culture &amp; LLM project with Prof. Monojit Choudhury.</p>
+        <div class="exp-row"><p class="exp-role">Ph.D. Researcher <span class="exp-org">— UFAL, Charles University</span></p><span class="exp-date">2019 — 2025</span></div>
+        <p class="exp-detail">Research on Text Style Transfer with neural language models. Advisor: Prof. Ondřej Dušek.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Research Intern <span class="exp-org">— Panlingua, India</span></p>
-          <span class="exp-date">2022 — 2023</span>
-        </div>
-        <p class="exp-detail">Low‑resource machine translation for Indian languages.</p>
+        <div class="exp-row"><p class="exp-role">Research Intern <span class="exp-org">— Panlingua Language Processing</span></p><span class="exp-date">2022</span></div>
+        <p class="exp-detail">Low-resource machine translation for Indian languages.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Research Assistant <span class="exp-org">— UKP Lab, TU Darmstadt</span></p>
-          <span class="exp-date">2018 — 2019</span>
-        </div>
-        <p class="exp-detail">Built a data‑to‑text generation corpus by automatically detecting evidence linked to structured tables in scientific papers.</p>
+        <div class="exp-row"><p class="exp-role">Research Assistant <span class="exp-org">— UKP Lab, TU Darmstadt</span></p><span class="exp-date">2018 — 2019</span></div>
+        <p class="exp-detail">Context detection for scientific data-to-text generation.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Technical Lead <span class="exp-org">— Tricon Infotech, Bangalore</span></p>
-          <span class="exp-date">2016 — 2019</span>
-        </div>
-        <p class="exp-detail">Led an analytical recommendation engine driven by usage statistics.</p>
+        <div class="exp-row"><p class="exp-role">Data Science Visiting Intern <span class="exp-org">— Indian Institute of Science (IISc)</span></p><span class="exp-date">2018</span></div>
+        <p class="exp-detail">Time-series forecasting and predictive analytics.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Senior Software Engineer <span class="exp-org">— Avaya Research Lab, Bangalore</span></p>
-          <span class="exp-date">2016</span>
-        </div>
-        <p class="exp-detail">Full‑stack log monitoring with optimised persistence.</p>
+        <div class="exp-row"><p class="exp-role">Lead ML Technical Specialist <span class="exp-org">— Tricon Infotech</span></p><span class="exp-date">2017 — 2019</span></div>
+        <p class="exp-detail">Product- and domain-specific recommendation engine at scale.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Software Engineer <span class="exp-org">— O9 Solutions, Bangalore</span></p>
-          <span class="exp-date">2015 — 2016</span>
-        </div>
-        <p class="exp-detail">Batch‑job management framework with notification capability.</p>
+        <div class="exp-row"><p class="exp-role">Senior Data Engineer <span class="exp-org">— Avaya</span></p><span class="exp-date">2016 — 2017</span></div>
+        <p class="exp-detail">Log-analysis pipeline with optimized storage and real-time monitoring.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">Senior Software Engineer <span class="exp-org">— Amdocs, Pune</span></p>
-          <span class="exp-date">2013 — 2015</span>
-        </div>
-        <p class="exp-detail">Recommendation engine and search components for a large web application.</p>
+        <div class="exp-row"><p class="exp-role">Senior Analytics Engineer <span class="exp-org">— o9 Solutions</span></p><span class="exp-date">2015 — 2016</span></div>
+        <p class="exp-detail">Scalable enterprise planning recommendation framework.</p>
       </li>
       <li>
-        <div class="exp-row">
-          <p class="exp-role">M.Tech, Computer Science &amp; Engineering <span class="exp-org">— NIT Durgapur</span></p>
-          <span class="exp-date">2011 — 2013</span>
-        </div>
-        <p class="exp-detail">Advisor: Prof. Tandra Pal. Evolutionary algorithms for GFRP composites machining and high‑level synthesis.</p>
+        <div class="exp-row"><p class="exp-role">Senior Software Engineer <span class="exp-org">— Amdocs</span></p><span class="exp-date">2014 — 2015</span></div>
+        <p class="exp-detail">Recommendation engine and search for e-commerce platforms.</p>
       </li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education" class="reveal">
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">Education</span>
+      <h2 class="section-title">Academic background</h2>
+    </div>
+    <div class="tile-list">
+      <div class="tile edu-card">
+        <div class="tile-meta">2019 — 2025 · Prague, Czechia</div>
+        <h3>Ph.D. in Computational Linguistics — Charles University</h3>
+        <ul class="edu-bullets">
+          <li><strong>Thesis:</strong> Text Style Transfer using Neural Models</li>
+          <li><strong>Advisor:</strong> Prof. Ondřej Dušek</li>
+        </ul>
+      </div>
+      <div class="tile edu-card">
+        <div class="tile-meta">2011 — 2013 · Durgapur, India</div>
+        <h3>M.Tech in Computer Science &amp; Engineering — NIT Durgapur</h3>
+        <ul class="edu-bullets">
+          <li><strong>GPA:</strong> 9.06 / 10</li>
+          <li><strong>Thesis:</strong> Real-world multi-objective optimization using evolutionary algorithms</li>
+          <li>Among the top-ranked students of the class</li>
+        </ul>
+      </div>
+      <div class="tile edu-card">
+        <div class="tile-meta">2007 — 2011 · Kolkata, India</div>
+        <h3>B.Tech in Computer Science &amp; Engineering — WBUT</h3>
+        <ul class="edu-bullets">
+          <li><strong>GPA:</strong> 8.79 / 10</li>
+          <li><strong>Project:</strong> Random number generation using Monte Carlo methods</li>
+          <li>Graduated as college topper</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cert-row">
+      <span class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Generative AI with LLMs</span>
+      <span class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Deep Neural Networks &amp; Tuning</span>
+      <span class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Machine Learning &amp; Statistics</span>
+      <span class="cert" style="color:var(--ink-mute)">via Coursera</span>
+    </div>
   </div>
 </section>
 
 <!-- ============ AWARDS ============ -->
 <section id="awards" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Honours</span>
-    <h2 class="section-title">Awards &amp; grants</h2>
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">Honours</span>
+      <h2 class="section-title">Awards &amp; grants</h2>
+    </div>
     <div class="tile-list cols-2">
       <div class="tile">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 4H4v2a3 3 0 0 0 3 3M17 4h3v2a3 3 0 0 1-3 3"/></svg></div>
         <div class="tile-meta">2023 · EMNLP</div>
-        <h3>Best Paper Award — BLP Workshop, EMNLP 2023</h3>
-        <p>For <em>Low‑Resource Text Style Transfer for Bangla</em>.</p>
+        <h3>Best Paper Award — BLP Workshop</h3>
+        <p>For <em>Low-Resource Text Style Transfer for Bangla</em>.</p>
       </div>
       <div class="tile">
-        <div class="tile-meta">2022 — 2024 · Charles University</div>
-        <h3>GAUK Research Grant (PI)</h3>
-        <p>Charles University Grant Agency grant; project completed with <em>honourable mention</em>.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-meta">2011 — 2013 · India</div>
-        <h3>GATE Government Scholarship</h3>
-        <p>Awarded for the Graduate Aptitude Test in Engineering during M.Tech at NIT Durgapur.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-meta">National · India</div>
-        <h3>IBM National Technical Competition — Winner</h3>
-        <p>National‑level technical competition organised by IBM.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TALKS ============ -->
-<section id="talks" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Selected talks</span>
-    <h2 class="section-title">Talks &amp; presentations</h2>
-    <div class="tile-list cols-2">
-      <div class="tile">
-        <div class="tile-meta">2024 · 4EU+ Workshop</div>
-        <h3>Text Style Transfer: An Introductory Overview</h3>
-        <p>Invited overview at the 4EU+ International Workshop on Recent Advancements in AI.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-meta">2024 · INLG, Tokyo</div>
-        <h3>Two papers presented at INLG 2024</h3>
-        <p>Multilingual style transfer for Indian languages; LLMs at text style transfer.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-meta">2023 · BLP @ EMNLP, Singapore</div>
-        <h3>Low‑Resource Text Style Transfer for Bangla</h3>
-        <p>Best paper presentation at the Bangla Language Processing workshop.</p>
-      </div>
-      <div class="tile">
-        <div class="tile-meta">2023 · EACL, Dubrovnik</div>
-        <h3>Polite Chatbot — Style Transfer in Dialogue</h3>
-        <p>Student Research Workshop presentation at EACL 2023.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TEACHING ============ -->
-<section id="teaching" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Teaching</span>
-    <h2 class="section-title">Teaching &amp; mentoring</h2>
-    <p>I have taught and developed introductory material on Machine Learning, Deep Learning, Programming, Data Structures, and Search Engine Optimization. During my Ph.D. I co‑mentored junior researchers and interns on text generation projects.</p>
-    <div class="tile-list cols-2" style="margin-top:1.3rem">
-      <div class="tile">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 5v6c0 5 8 11 8 11s8-6 8-11V5z"/></svg></div>
         <div class="tile-meta">Charles University</div>
-        <h3>Ph.D. mentoring &amp; collaboration</h3>
-        <p>Worked alongside master's and Ph.D. students on style transfer, detoxification, and politeness‑aware dialogue.</p>
+        <h3>CU Grant Agency Award — as PI</h3>
+        <p>Charles University Grant Agency research grant, led as Principal Investigator.</p>
       </div>
       <div class="tile">
-        <div class="tile-meta">Industry &amp; community</div>
-        <h3>Introductory courses (ML / DL / DS)</h3>
-        <p>Designed and delivered short courses on ML/DL, programming, and data structures for students and early‑career engineers.</p>
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.6 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div>
+        <div class="tile-meta">Amdocs · Tricon Infotech</div>
+        <h3>Star Employee of the Year</h3>
+        <p>Recognised for outstanding contribution at two organisations.</p>
+      </div>
+      <div class="tile">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM6 9H3M18 9h3M9 21h6M12 15v6"/></svg></div>
+        <div class="tile-meta">National · India</div>
+        <h3>National Winner — IBM Tech Competition</h3>
+        <p>National-level technical competition organised by IBM.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ BLOG ============ -->
-<section id="blog" class="reveal">
-  <div class="container">
-    <span class="section-eyebrow">Writing</span>
-    <h2 class="section-title">Notes &amp; essays</h2>
-    <p>A growing space for shorter‑form writing on language models, evaluation, and what it means for AI to work across cultures.</p>
-
-    <ul class="blog-list" id="blogList">
-      <!-- New posts: add an <li><a href="blog/your-post.html"><span class="blog-title">Title</span><span class="blog-date">2026-05-08</span></a></li> -->
-    </ul>
-
-    <div class="blog-empty" id="blogEmpty">
-      First posts coming soon — drafts are in progress on multilingual evaluation and what culture means inside an LLM. Check back, or subscribe via my Scholar profile.
+<!-- ============ CONTACT CTA ============ -->
+<section class="reveal">
+  <div class="container wide">
+    <div class="cta-band">
+      <h2>Let's build something across languages</h2>
+      <p>I'm always glad to talk about LLM evaluation, multilingual &amp; cultural NLP, controllable generation, and applied AI — research collaborations or engineering roles alike.</p>
+      <div class="cta-actions">
+        <a href="mailto:soura1990@gmail.com" class="btn btn-white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Get in touch
+        </a>
+        <a href="files/pdf/Resume_Sourabrata.pdf" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Download CV
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -442,16 +519,20 @@
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner">
-    <div>© <span id="year"></span> Sourabrata Mukherjee. Built by hand with care.</div>
-    <div>
-      <a href="mailto:soura1990@gmail.com">soura1990@gmail.com</a>
-      &nbsp;·&nbsp;
+    <div>© <span id="year"></span> Sourabrata Mukherjee · Built by hand with care.</div>
+    <div class="footer-links">
+      <a href="mailto:soura1990@gmail.com">Email</a>
       <a href="files/pdf/Resume_Sourabrata.pdf">CV</a>
-      &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=sYNjrdsAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
       <a href="https://github.com/souro" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/souro" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="assets/js/main.js" defer></script>
 </body>
