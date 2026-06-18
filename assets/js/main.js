@@ -179,4 +179,22 @@
   /* ── footer year ──────────────────────────────────────── */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ── hero highlight belt (seamless scrolling marquee) ─── */
+  var heroBelt = document.getElementById("heroBelt");
+  if (heroBelt) {
+    var beltItems = [
+      "PhD · Charles University",
+      "Microsoft Research · Postdoctoral Researcher",
+      "6+ years of ML engineering",
+      "8+ years of research experience"
+    ];
+    var beltBuild = function () {
+      return beltItems.map(function (s) {
+        return '<span class="belt-item"><span class="belt-dot"></span>' + s + "</span>";
+      }).join("");
+    };
+    // duplicate the set for a seamless infinite loop
+    heroBelt.innerHTML = beltBuild() + beltBuild();
+  }
 })();

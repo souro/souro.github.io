@@ -234,7 +234,7 @@
       (date: [since 07/2025], title: "Postdoctoral Researcher",
        org: "Microsoft Research", loc: "Bengaluru, India",
        desc: "Multilingual NLP, LLM evaluation, and controllable generation for Language AI."),
-      (date: [from 07/2024 #linebreak() to 03/2025], title: "Visiting Research Scientist",
+      (date: [from 07/2024 #linebreak() to 03/2025], title: "Visiting Researcher",
        org: "MBZUAI", loc: "Abu Dhabi, UAE",
        desc: "Cultural and cross-lingual dimensions of large language models."),
       (date: [from 01/2022 #linebreak() to 06/2022], title: "Research Intern",
