@@ -214,10 +214,10 @@
     #side-section[Awards]
     #set text(size: 7.3pt)
     #set list(spacing: 2.5pt)
-    - #text(weight: 600)[Best Paper Award] — BLP \@ EMNLP 2023
-    - #text(weight: 600)[CU Grant Agency Award] — as PI
-    - #text(weight: 600)[Star Employee of the Year] — Amdocs & Tricon
-    - #text(weight: 600)[National Winner] — IBM Tech Competition
+    - #text(weight: 600)[Best Paper Award] · BLP \@ EMNLP 2023
+    - #text(weight: 600)[CU Grant Agency Award] · as PI
+    - #text(weight: 600)[Star Employee of the Year] · Amdocs & Tricon
+    - #text(weight: 600)[National Winner] · IBM Tech Competition
 
     #side-section[Certification]
     #set text(size: 7.3pt)
@@ -249,7 +249,7 @@
       (date: [from 02/2018 #linebreak() to 08/2018], title: "Data Science Visiting Intern",
        org: "Indian Institute of Science (IISc)", loc: "Bengaluru, India",
        desc: "Time-series forecasting and predictive analytics."),
-      (date: [from 06/2017 #linebreak() to 09/2019], title: "Lead ML Technical Specialist",
+      (date: [from 06/2017 #linebreak() to 09/2019], title: "Senior ML Engineer → Tech Lead",
        org: "Tricon Infotech", loc: "Bengaluru, India",
        desc: "Product- and domain-specific recommendation engine at scale."),
       (date: [from 04/2016 #linebreak() to 05/2017], title: "Senior Data Engineer",
@@ -258,7 +258,7 @@
       (date: [from 05/2015 #linebreak() to 03/2016], title: "Senior Analytics Engineer",
        org: "o9 Solutions", loc: "Bengaluru, India",
        desc: "Scalable enterprise planning recommendation framework."),
-      (date: [from 01/2014 #linebreak() to 04/2015], title: "Senior Software Engineer",
+      (date: [from 01/2014 #linebreak() to 04/2015], title: "Software → Senior Software Engineer",
        org: "Amdocs", loc: "Pune, India",
        desc: "Recommendation engine and search for e-commerce platforms."),
     ))

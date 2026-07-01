@@ -246,10 +246,33 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   align-items: center;
   gap: 0.55rem;
 }
+.nav-left { display: inline-flex; align-items: center; gap: 0.7rem; }
+.nav-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.78rem;
+  line-height: 1;
+  transform: translateY(4px);
+}
+.nav-views[hidden] { display: none; }
+.nav-views svg { width: 14px; height: 14px; color: var(--accent); }
+.nav-views .nv-count {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
 .nav-brand .mark {
   font-family: "Dancing Script", "Segoe Script", cursive;
-  font-size: 1.7rem;
-  line-height: 0.9;
+  font-size: 2.2rem;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: 0.01em;
   background: linear-gradient(120deg, var(--accent), var(--accent-3) 70%, var(--accent-2));
@@ -257,7 +280,8 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  padding: 0 0.12em 0.06em;
+  padding: 0 0.14em;
+  transform: translateY(-0.04em);
   transition: filter var(--t-fast) var(--ease);
 }
 .nav-brand:hover .mark { filter: drop-shadow(0 2px 8px var(--halo-1)); }
@@ -510,9 +534,9 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .belt-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0 0.95rem;
-  font-size: 0.74rem;
+  gap: 0.55rem;
+  padding: 0 1rem;
+  font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
@@ -1023,6 +1047,50 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .footer a { color: var(--ink-soft); }
 .footer a:hover { color: var(--accent); }
 .footer-links { display: flex; gap: 1.2rem; align-items: center; }
+
+/* travels — world map */
+.map-wrap { display: flex; flex-direction: column; gap: 1.6rem; }
+.world-map {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  max-height: 580px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.world-map .jvm-tooltip {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  border-radius: 8px;
+  background: var(--ink);
+  padding: 0.3rem 0.6rem;
+}
+.map-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+}
+.map-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.map-chips .fp { display: grid; place-items: center; color: var(--accent); }
+.map-chips .fp svg { width: 15px; height: 15px; }
 
 /* ─── scroll-to-top ──────────────────────────────────────── */
 .to-top {

@@ -180,6 +180,21 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ── profile views counter (nav) ──────────────────────── */
+  var viewsBadge = document.getElementById("viewsBadge");
+  var viewsCount = document.getElementById("viewsCount");
+  if (viewsBadge && viewsCount && "fetch" in window) {
+    fetch("https://api.counterapi.dev/v1/souro-github-io/profile-views/up")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var n = data && typeof data.count === "number" ? data.count : null;
+        if (n === null) return Promise.reject();
+        viewsCount.textContent = n.toLocaleString();
+        viewsBadge.hidden = false;
+      })
+      .catch(function () { /* leave badge hidden if the service is unavailable */ });
+  }
+
   /* ── hero highlight belt (seamless scrolling marquee) ─── */
   var heroBelt = document.getElementById("heroBelt");
   if (heroBelt) {
@@ -196,5 +211,63 @@
     };
     // duplicate the set for a seamless infinite loop
     heroBelt.innerHTML = beltBuild() + beltBuild();
+  }
+
+  /* ── travels world map (jsVectorMap) ──────────────────── */
+  var mapEl = document.getElementById("worldMap");
+  if (mapEl && typeof jsVectorMap !== "undefined") {
+    var visited = ["DE", "CZ", "HU", "HR", "IT", "ES", "SG", "JP", "AE", "CN", "IN"];
+    var markers = [
+      { name: "Germany", coords: [51.16, 10.45] },
+      { name: "Czechia", coords: [50.08, 14.44] },
+      { name: "Hungary", coords: [47.50, 19.04] },
+      { name: "Croatia", coords: [45.10, 15.20] },
+      { name: "Italy", coords: [41.87, 12.57] },
+      { name: "Spain", coords: [40.46, -3.75] },
+      { name: "Singapore", coords: [1.35, 103.82] },
+      { name: "Japan", coords: [36.20, 138.25] },
+      { name: "UAE", coords: [23.42, 53.85] },
+      { name: "China", coords: [35.86, 104.20] },
+      { name: "India", coords: [20.59, 78.96] }
+    ];
+    var mapInstance = null;
+    var renderMap = function () {
+      var cs = getComputedStyle(document.documentElement);
+      var accent = cs.getPropertyValue("--accent").trim() || "#0a7d70";
+      var accent2 = cs.getPropertyValue("--accent-2").trim() || "#e07a4f";
+      var faded = cs.getPropertyValue("--rule").trim() || "#dfe5e2";
+      var stroke = cs.getPropertyValue("--bg-elev").trim() || "#ffffff";
+      if (mapInstance) { mapInstance.destroy(); mapEl.innerHTML = ""; }
+      mapInstance = new jsVectorMap({
+        selector: "#worldMap",
+        map: "world",
+        zoomButtons: false,
+        zoomOnScroll: false,
+        backgroundColor: "transparent",
+        regionStyle: {
+          initial: { fill: faded, stroke: stroke, strokeWidth: 0.4 },
+          hover: { fillOpacity: 0.75 }
+        },
+        markers: markers,
+        markerStyle: {
+          initial: { fill: accent2, stroke: "#fff", strokeWidth: 1.4, r: 5 },
+          hover: { fill: accent2, r: 7 }
+        },
+        markersSelectable: false
+      });
+      // explicitly highlight visited countries
+      visited.forEach(function (c) {
+        var region = mapInstance.regions[c];
+        if (region && region.element && region.element.setStyle) {
+          region.element.setStyle("fill", accent);
+        }
+      });
+    };
+    renderMap();
+    // recolor when the theme switches
+    new MutationObserver(renderMap).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"]
+    });
   }
 })();

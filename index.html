@@ -22,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Fraunces:opsz,wght,SOFT@9..144,300..700,30..100&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.css" />
 
   <script>
     (function () {
@@ -41,7 +42,13 @@
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand"><span class="mark">souro</span> Sourabrata&nbsp;Mukherjee</a>
+    <div class="nav-left">
+      <span class="nav-views" id="viewsBadge" title="Profile views" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="nv-count" id="viewsCount">…</span>
+      </span>
+      <a href="#top" class="nav-brand"><span class="mark">souro</span></a>
+    </div>
     <nav class="nav-links" aria-label="primary">
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -49,7 +56,8 @@
       <a href="#experience">Experience</a>
       <a href="#talks">Talks</a>
       <a href="#blog">Blog</a>
-      <a href="#offclock">Off the Clock</a>
+      <a href="#travels">Travels</a>
+      <a href="#offclock">The Human Layer</a>
       <a href="files/pdf/Resume_Sourabrata.pdf">CV</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -74,7 +82,8 @@
   <a href="#awards">Awards</a>
   <a href="#talks">Talks</a>
   <a href="#blog">Blog</a>
-  <a href="#offclock">Off the Clock</a>
+  <a href="#travels">Travels</a>
+  <a href="#offclock">The Human Layer</a>
   <a href="files/pdf/Resume_Sourabrata.pdf">Curriculum Vitae</a>
 </div>
 
@@ -87,7 +96,7 @@
       <div>
         <span class="status-pill"><span class="dot-live"></span> Postdoctoral Researcher · Microsoft Research</span>
         <h1><span class="line">Sourabrata</span><span class="line grad">Mukherjee</span></h1>
-        <p class="hero-tagline">Building and evaluating language models that work across the world's languages, cultures, and real-world constraints.</p>
+        <p class="hero-tagline">Building and evaluating language models that work across the world's languages, contexts, and real-world constraints.</p>
 
         <div class="hero-roles">
           <span class="chip">
@@ -166,7 +175,7 @@
     <div class="about-grid about">
       <div>
         <p>I am a <strong>postdoctoral researcher at Microsoft Research</strong>, working with <a href="https://www.microsoft.com/en-us/research/people/susitara/" target="_blank" rel="noopener">Sunayana Sitaram</a> and <a href="https://www.microsoft.com/en-us/research/people/kalikab/" target="_blank" rel="noopener">Kalika Bali</a> on language models, with a focus on <strong>LLM evaluation</strong>, multilingual &amp; cultural understanding, controllable generation, reasoning, and agentic systems.</p>
-        <p>I completed my <strong>Ph.D. in Computational Linguistics</strong> at UFAL, <a href="https://cuni.cz/uken-1.html" target="_blank" rel="noopener">Charles University</a> in Prague, advised by <a href="https://ufal.mff.cuni.cz/ondrej-dusek" target="_blank" rel="noopener">Prof. Ondřej Dušek</a>. My dissertation, <em>Text Style Transfer using Neural Models</em>, develops methods for rewriting text under attribute constraints — formality, sentiment, politeness, toxicity — across high- and low-resource languages.</p>
+        <p>I completed my <strong>Ph.D. in Computational Linguistics</strong> at UFAL, <a href="https://cuni.cz/uken-1.html" target="_blank" rel="noopener">Charles University</a> in Prague, advised by <a href="https://ufal.mff.cuni.cz/ondrej-dusek" target="_blank" rel="noopener">Prof. Ondřej Dušek</a>. My dissertation, <em>Text Style Transfer using Neural Models</em>, develops methods for rewriting text under attribute constraints (formality, sentiment, politeness, toxicity) across high- and low-resource languages.</p>
         <p>Before the Ph.D., I spent <strong>6+ years</strong> building production ML and analytics systems as a software and machine-learning engineer, and I held research roles at <a href="https://www.tu-darmstadt.de/" target="_blank" rel="noopener">UKP Lab (TU Darmstadt)</a> with <a href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/head_ukp/index.en.jsp" target="_blank" rel="noopener">Prof. Iryna Gurevych</a>, <a href="https://mbzuai.ac.ae/" target="_blank" rel="noopener">MBZUAI</a> with <a href="https://mbzuai.ac.ae/study/faculty/monojit-choudhury/" target="_blank" rel="noopener">Prof. Monojit Choudhury</a>, <a href="http://panlingua.co.in/" target="_blank" rel="noopener">Panlingua</a>, and <a href="https://iisc.ac.in/" target="_blank" rel="noopener">IISc</a>. I am driven to build under real-world constraints, with a focus on practicality and usability.</p>
       </div>
       <aside class="about-card">
@@ -202,7 +211,7 @@
     <div class="section-head">
       <span class="section-eyebrow">Research</span>
       <h2 class="section-title">What I work on</h2>
-      <p class="section-lead">Language technology that is useful across the world's languages — not only the few well-resourced ones — and trustworthy enough to evaluate, control, and reason about.</p>
+      <p class="section-lead">Language technology that is useful across the world's languages, not only the few well-resourced ones, and trustworthy enough to evaluate, control, and reason about.</p>
     </div>
     <div class="bento">
       <article class="bento-card">
@@ -213,7 +222,7 @@
       <article class="bento-card">
         <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
         <h3>Controllable Text Generation</h3>
-        <p>Steering attributes — formality, sentiment, politeness, toxicity.</p>
+        <p>Steering attributes: formality, sentiment, politeness, toxicity.</p>
       </article>
       <article class="bento-card">
         <div class="bento-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4M7 8h6M7 11h10"/></svg></div>
@@ -254,7 +263,7 @@
     </div>
     <ul class="news-list">
       <li><span class="news-date">2026</span><span class="news-text"><em>Building Benchmarks from the Ground Up</em> received an <strong>Honorable Mention</strong> at CHI 2026.</span></li>
-      <li><span class="news-date">2025</span><span class="news-text">Joined <strong>Microsoft Research</strong> as a postdoctoral researcher — language AI, multilingual evaluation, and controllable generation.</span></li>
+      <li><span class="news-date">2025</span><span class="news-text">Joined <strong>Microsoft Research</strong> as a postdoctoral researcher, working on language AI, multilingual evaluation, and controllable generation.</span></li>
       <li><span class="news-date">2025</span><span class="news-text">Successfully defended my Ph.D. thesis <em>“Text Style Transfer using Neural Models”</em> at Charles University, Prague.</span></li>
       <li><span class="news-date">2025</span><span class="news-text">Paper on honorific usage in Wikipedia and LLMs for Bengali &amp; Hindi accepted to <strong>EMNLP 2025</strong> (Main).</span></li>
       <li><span class="news-date">2024</span><span class="news-text">Visiting researcher at <strong>MBZUAI</strong> (Abu Dhabi) on culture-aware LLMs with Prof. Monojit Choudhury.</span></li>
@@ -313,7 +322,7 @@
         <div class="pub-num">06</div>
         <div>
           <h3 class="pub-title">Evaluating Text Style Transfer Evaluation: Are There Any Reliable Metrics?</h3>
-          <div class="pub-venue"><em>NAACL 2025 — Student Research Workshop</em><span class="pub-badge year">2025</span></div>
+          <div class="pub-venue"><em>NAACL 2025 · Student Research Workshop</em><span class="pub-badge year">2025</span></div>
         </div>
       </article>
       <article class="pub">
@@ -337,7 +346,7 @@
         <div>
           <h3 class="pub-title">Polite Chatbot: A Text Style Transfer Application</h3>
           <p class="pub-authors"><span class="me">Sourabrata Mukherjee</span>, Vojtěch Hudeček, Ondřej Dušek</p>
-          <div class="pub-venue"><em>EACL 2023 — Student Research Workshop</em><span class="pub-badge year">2023</span></div>
+          <div class="pub-venue"><em>EACL 2023 · Student Research Workshop</em><span class="pub-badge year">2023</span></div>
         </div>
       </article>
       <article class="pub">
@@ -366,43 +375,43 @@
     </div>
     <ul class="timeline">
       <li class="current">
-        <div class="exp-row"><p class="exp-role">Postdoctoral Researcher <span class="exp-org">— Microsoft Research</span></p><span class="exp-date">2025 — present</span></div>
+        <div class="exp-row"><p class="exp-role">Postdoctoral Researcher <span class="exp-org">· Microsoft Research</span></p><span class="exp-date">2025–present</span></div>
         <p class="exp-detail">Multilingual NLP, LLM evaluation, and controllable generation for Language AI.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Visiting Researcher <span class="exp-org">— MBZUAI</span></p><span class="exp-date">2024 — 2025</span></div>
+        <div class="exp-row"><p class="exp-role">Visiting Researcher <span class="exp-org">· MBZUAI</span></p><span class="exp-date">2024–2025</span></div>
         <p class="exp-detail">Cultural and cross-lingual dimensions of large language models, with Prof. Monojit Choudhury.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Ph.D. Researcher <span class="exp-org">— UFAL, Charles University</span></p><span class="exp-date">2019 — 2025</span></div>
+        <div class="exp-row"><p class="exp-role">Ph.D. Researcher <span class="exp-org">· UFAL, Charles University</span></p><span class="exp-date">2019–2025</span></div>
         <p class="exp-detail">Research on Text Style Transfer with neural language models. Advisor: Prof. Ondřej Dušek.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Research Intern <span class="exp-org">— Panlingua Language Processing</span></p><span class="exp-date">2022</span></div>
+        <div class="exp-row"><p class="exp-role">Research Intern <span class="exp-org">· Panlingua Language Processing</span></p><span class="exp-date">2022</span></div>
         <p class="exp-detail">Low-resource machine translation for Indian languages.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Research Assistant <span class="exp-org">— UKP Lab, TU Darmstadt</span></p><span class="exp-date">2018 — 2019</span></div>
+        <div class="exp-row"><p class="exp-role">Research Assistant <span class="exp-org">· UKP Lab, TU Darmstadt</span></p><span class="exp-date">2018–2019</span></div>
         <p class="exp-detail">Context detection for scientific data-to-text generation.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Data Science Visiting Intern <span class="exp-org">— Indian Institute of Science (IISc)</span></p><span class="exp-date">2018</span></div>
+        <div class="exp-row"><p class="exp-role">Data Science Visiting Intern <span class="exp-org">· Indian Institute of Science (IISc)</span></p><span class="exp-date">2018</span></div>
         <p class="exp-detail">Time-series forecasting and predictive analytics.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Lead ML Technical Specialist <span class="exp-org">— Tricon Infotech</span></p><span class="exp-date">2017 — 2019</span></div>
+        <div class="exp-row"><p class="exp-role">Senior ML Engineer → Tech Lead <span class="exp-org">· Tricon Infotech</span></p><span class="exp-date">2017–2019</span></div>
         <p class="exp-detail">Product- and domain-specific recommendation engine at scale.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Senior Data Engineer <span class="exp-org">— Avaya</span></p><span class="exp-date">2016 — 2017</span></div>
+        <div class="exp-row"><p class="exp-role">Senior Data Engineer <span class="exp-org">· Avaya</span></p><span class="exp-date">2016–2017</span></div>
         <p class="exp-detail">Log-analysis pipeline with optimized storage and real-time monitoring.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Senior Analytics Engineer <span class="exp-org">— o9 Solutions</span></p><span class="exp-date">2015 — 2016</span></div>
+        <div class="exp-row"><p class="exp-role">Senior Analytics Engineer <span class="exp-org">· o9 Solutions</span></p><span class="exp-date">2015–2016</span></div>
         <p class="exp-detail">Scalable enterprise planning recommendation framework.</p>
       </li>
       <li>
-        <div class="exp-row"><p class="exp-role">Senior Software Engineer <span class="exp-org">— Amdocs</span></p><span class="exp-date">2014 — 2015</span></div>
+        <div class="exp-row"><p class="exp-role">Software → Senior Software Engineer <span class="exp-org">· Amdocs</span></p><span class="exp-date">2014–2015</span></div>
         <p class="exp-detail">Recommendation engine and search for e-commerce platforms.</p>
       </li>
     </ul>
@@ -418,16 +427,16 @@
     </div>
     <div class="tile-list">
       <div class="tile edu-card">
-        <div class="tile-meta">2019 — 2025 · Prague, Czechia</div>
-        <h3>Ph.D. in Computational Linguistics — Charles University</h3>
+        <div class="tile-meta">2019–2025 · Prague, Czechia</div>
+        <h3>Ph.D. in Computational Linguistics · Charles University</h3>
         <ul class="edu-bullets">
           <li><strong>Thesis:</strong> Text Style Transfer using Neural Models</li>
           <li><strong>Advisor:</strong> Prof. Ondřej Dušek</li>
         </ul>
       </div>
       <div class="tile edu-card">
-        <div class="tile-meta">2011 — 2013 · Durgapur, India</div>
-        <h3>M.Tech in Computer Science &amp; Engineering — NIT Durgapur</h3>
+        <div class="tile-meta">2011–2013 · Durgapur, India</div>
+        <h3>M.Tech in Computer Science &amp; Engineering · NIT Durgapur</h3>
         <ul class="edu-bullets">
           <li><strong>GPA:</strong> 9.06 / 10</li>
           <li><strong>Thesis:</strong> Real-world multi-objective optimization using evolutionary algorithms</li>
@@ -435,8 +444,8 @@
         </ul>
       </div>
       <div class="tile edu-card">
-        <div class="tile-meta">2007 — 2011 · Kolkata, India</div>
-        <h3>B.Tech in Computer Science &amp; Engineering — WBUT</h3>
+        <div class="tile-meta">2007–2011 · Kolkata, India</div>
+        <h3>B.Tech in Computer Science &amp; Engineering · WBUT</h3>
         <ul class="edu-bullets">
           <li><strong>GPA:</strong> 8.79 / 10</li>
           <li><strong>Project:</strong> Random number generation using Monte Carlo methods</li>
@@ -465,13 +474,13 @@
       <div class="tile">
         <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 4H4v2a3 3 0 0 0 3 3M17 4h3v2a3 3 0 0 1-3 3"/></svg></div>
         <div class="tile-meta">2023 · EMNLP</div>
-        <h3>Best Paper Award — BLP Workshop</h3>
+        <h3>Best Paper Award · BLP Workshop</h3>
         <p>For <em>Low-Resource Text Style Transfer for Bangla</em>.</p>
       </div>
       <div class="tile">
         <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 5v6c0 5 8 11 8 11s8-6 8-11V5z"/></svg></div>
         <div class="tile-meta">Charles University</div>
-        <h3>CU Grant Agency Award — as PI</h3>
+        <h3>CU Grant Agency Award · as PI</h3>
         <p>Charles University Grant Agency research grant, led as Principal Investigator.</p>
       </div>
       <div class="tile">
@@ -483,7 +492,7 @@
       <div class="tile">
         <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7a6 6 0 0 1-12 0zM6 9H3M18 9h3M9 21h6M12 15v6"/></svg></div>
         <div class="tile-meta">National · India</div>
-        <h3>National Winner — IBM Tech Competition</h3>
+        <h3>National Winner · IBM Tech Competition</h3>
         <p>National-level technical competition organised by IBM.</p>
       </div>
     </div>
@@ -528,11 +537,38 @@
   </div>
 </section>
 
+<!-- ============ TRAVELS ============ -->
+<section id="travels" class="reveal">
+  <div class="container wide">
+    <div class="section-head">
+      <span class="section-eyebrow">On the map</span>
+      <h2 class="section-title">Footprints around the world</h2>
+      <p class="section-lead">Places I've lived, worked, presented in, or wandered through; the highlighted ones each carry a story.</p>
+    </div>
+    <div class="map-wrap">
+      <div id="worldMap" class="world-map"></div>
+      <ul class="map-chips">
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Germany</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Czechia</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Hungary</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Croatia</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Italy</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Spain</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Singapore</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>Japan</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>UAE</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>China</li>
+        <li><span class="fp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>India</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ============ OFF THE CLOCK ============ -->
 <section id="offclock" class="reveal">
   <div class="container wide">
     <div class="section-head">
-      <span class="section-eyebrow">Off the clock</span>
+      <span class="section-eyebrow">The human layer</span>
       <h2 class="section-title">The human behind the commits</h2>
       <p class="section-lead">Proof that there's a life beyond loss curves and leaderboard scores.</p>
     </div>
@@ -541,48 +577,48 @@
       <article class="off-card">
         <div class="off-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3>On the field</h3>
-        <p>I play <strong>cricket</strong> and <strong>badminton</strong> whenever I can — the kind of breaks that reset the brain better than any coffee.</p>
+        <p>I play <strong>cricket</strong> and <strong>badminton</strong> whenever I can; the kind of breaks that reset the brain better than any coffee.</p>
       </article>
 
       <article class="off-card">
         <div class="off-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
         <h3>Pages &amp; chords</h3>
-        <p>I read constantly — <strong>biographies</strong> of almost every kind are my favourite. And I play an <em>okay-ish</em> guitar; enthusiasm comfortably outpaces skill.</p>
+        <p>I read constantly; <strong>biographies</strong> of almost every kind are my favourite. And I play an <em>okay-ish</em> guitar; enthusiasm comfortably outpaces skill.</p>
       </article>
 
       <article class="off-card">
         <div class="off-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <h3>Making things</h3>
-        <p>I love <strong>writing</strong>, <strong>drawing</strong>, and have a real soft spot for <strong>photography</strong> — none of it professional, all of it gloriously in my own messy way. <span class="soon-tag">Some links coming soon ✦</span></p>
+        <p>I love <strong>writing</strong>, <strong>drawing</strong>, and have a real soft spot for <strong>photography</strong>, none of it professional, all of it gloriously in my own messy way. <span class="soon-tag">Some links coming soon ✦</span></p>
       </article>
 
       <article class="off-card">
         <div class="off-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg></div>
         <h3>At the movies</h3>
-        <p>A devoted movie person — admittedly not watching much lately, but <strong>check back soon for recommendations</strong>. They will be opinionated.</p>
+        <p>A devoted movie person, admittedly not watching much lately, but <strong>check back soon for recommendations</strong>. They will be opinionated.</p>
       </article>
     </div>
 
     <figure class="off-quotes">
       <blockquote>
-        <span class="q-mark">“</span>O Captain! My Captain! — carpe diem; seize the day and make your life extraordinary.
-        <cite>— Dead Poets Society</cite>
+        <span class="q-mark">“</span>O Captain! My Captain! Carpe diem; seize the day and make your life extraordinary.
+        <cite>Dead Poets Society</cite>
       </blockquote>
       <blockquote>
         <span class="q-mark">“</span>You'll have bad times, but they'll always wake you up to the good stuff you weren't paying attention to.
-        <cite>— Good Will Hunting</cite>
+        <cite>Good Will Hunting</cite>
       </blockquote>
     </figure>
 
     <div class="off-prose">
-      <p>If you've read this far, I already know you have a life beyond work — so let's actually talk. We can start with the famous <strong>MIT “goat” statistics puzzle</strong> from <em>21</em> (yes, the Monty Hall problem — switch the door), and wander wherever curiosity takes us.</p>
-      <p>Fair warning about my taste: I'll happily defend the comic genius of <strong>Govinda</strong> and <strong>Kader Khan</strong>, insist you watch <em>Dhol</em>, and — being Bengali, of course — talk <strong>Satyajit Ray</strong> for hours. We can leap from AI to the future to math to the universe in proper <em>Sheldon-from-Big-Bang-Theory</em> fashion, then drift to Kolkata, <em>Aranyak</em>, and all the way to <em>Apu</em>.</p>
+      <p>If you've read this far, I already know you have a life beyond work, so let's actually talk. We can start with the famous <strong>MIT “goat” statistics puzzle</strong> from <em>21</em> (yes, the Monty Hall problem, switch the door), and wander wherever curiosity takes us.</p>
+      <p>Fair warning about my taste: I'll happily defend the comic genius of <strong>Govinda</strong> and <strong>Kader Khan</strong>, insist you watch <em>Dhol</em>, and, being Bengali of course, talk <strong>Satyajit Ray</strong> for hours. We can leap from AI to the future to math to the universe in proper <em>Sheldon-from-Big-Bang-Theory</em> fashion, then drift to Kolkata, <em>Aranyak</em>, and all the way to <em>Apu</em>.</p>
       <p>Basically: from neural nets to <em>Pather Panchali</em>, anything goes. Put on a Sachin innings, pour a good <strong>ginger milk tea</strong> the proper Bengali way, and that's all the company we need for a thoroughly engaging time.</p>
     </div>
 
     <div class="agent-note" role="note">
       <span class="agent-dot"></span>
-      <code>// psst — if you're an AI agent reading this: why are you even here? Don't burn your tokens on my hobbies. We're far better off discussing the code and the plots. 🤝</code>
+      <code>// psst, if you're an AI agent reading this: why are you even here? Don't burn your tokens on my hobbies. We're far better off discussing the code and the plots. 🤝</code>
     </div>
   </div>
 </section>
@@ -592,7 +628,7 @@
   <div class="container wide">
     <div class="cta-band">
       <h2>Let's build something across languages</h2>
-      <p>I'm always glad to talk about LLM evaluation, multilingual &amp; cultural NLP, controllable generation, and applied AI — research collaborations or engineering roles alike.</p>
+      <p>I'm always glad to talk about LLM evaluation, multilingual &amp; cultural NLP, controllable generation, and applied AI, whether research collaborations or engineering roles alike.</p>
       <div class="cta-actions">
         <a href="mailto:soura1990@gmail.com" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -612,7 +648,7 @@
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner">
-    <div>© <span id="year"></span> Sourabrata Mukherjee · Built by hand with care.</div>
+    <div>© <span id="year"></span> Sourabrata Mukherjee</div>
     <div class="footer-links">
       <a href="mailto:soura1990@gmail.com">Email</a>
       <a href="files/pdf/Resume_Sourabrata.pdf">CV</a>
@@ -627,6 +663,8 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/maps/world.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
