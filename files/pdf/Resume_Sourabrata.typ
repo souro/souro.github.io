@@ -301,7 +301,7 @@
 
     #v(4pt)
     #grid(columns: (auto, auto, 1fr), column-gutter: 7pt, align: (left+horizon, left+horizon, left+horizon),
-      text(font: display, fill: accent, weight: 400, size: 12.5pt)[#smallcaps[Selected Publications]],
+      text(font: display, fill: accent, weight: 400, size: 12.5pt)[#smallcaps[Recent Publications]],
       link("https://scholar.google.com/citations?user=sYNjrdsAAAAJ")[#text(fill: accent, size: 7.3pt)[#fa-google-scholar() #h(2pt)#text(weight: 500)[View all] #fa-arrow-up-right-from-square(size: 0.75em)]],
       line(length: 100%, stroke: 0.5pt + accent),
     )
@@ -309,9 +309,9 @@
     #grid(columns: (1.5cm, 1fr), column-gutter: 0.5cm, row-gutter: 0.62em,
       inset: ((:), (left: 0.5cm)),
       grid.vline(x: 1, stroke: 0.9pt + accent),
+      [], publ("Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use", "COLM 26", note: "Spotlight · Top 15%"),
       [], publ("Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings", "CHI 26", note: "Honorable Mention"),
       [], publ("Women, Infamous, and Exotic Beings: A Comparative Study of Honorific Usages in Wikipedia and LLMs for Bengali and Hindi", "EMNLP Main 25"),
-      [], publ("Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use", "COLM 26", note: "Spotlight · Top 15%"),
       [], publ("The Geometry of LLM-as-Judge: Why Inter-LLM Consensus Is Not Human Alignment", "EMNLP 26", note: "Communicated"),
       [], publ("Opening the Judge: What LLM Evaluators Compute but Do Not Report", "EACL 26", note: "Communicated"),
       [], publ("Evaluation Is Training: Confidence Outruns Correctness When the Judge Is the Target", "EACL 26", note: "Communicated"),
