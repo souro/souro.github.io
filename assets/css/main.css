@@ -562,7 +562,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   box-shadow: var(--shadow-sm);
 }
 @media (min-width: 640px) { .stats { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 980px) { .stats { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1060px) { .stats { grid-template-columns: repeat(6, 1fr); } }
 .stat {
   position: relative;
   background: var(--bg-elev);
@@ -1262,8 +1262,51 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .reveal[data-delay="3"] { transition-delay: 210ms; }
 .reveal[data-delay="4"] { transition-delay: 280ms; }
 
+/* staggered children: each card drifts up a beat after the previous one */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.stagger.in > * { opacity: 1; transform: none; }
+
+/* section titles get a soft accent sweep as they arrive */
+.section-title { position: relative; }
+.section-head.in .section-title::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -0.35rem;
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3) 60%, transparent);
+  animation: title-sweep 900ms var(--ease-out) 180ms forwards;
+}
+@keyframes title-sweep { to { width: 68px; } }
+
+/* hero entrance */
+.hero-anim { opacity: 0; animation: hero-rise 900ms var(--ease-out) forwards; }
+.hero-anim.d1 { animation-delay: 60ms; }
+.hero-anim.d2 { animation-delay: 150ms; }
+.hero-anim.d3 { animation-delay: 240ms; }
+.hero-anim.d4 { animation-delay: 330ms; }
+.hero-anim.d5 { animation-delay: 420ms; }
+.hero-anim.d6 { animation-delay: 500ms; }
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* hero photo drifts gently against the scroll */
+.hero-photo-frame { will-change: transform; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+  .stagger > * { opacity: 1; transform: none; }
+  .hero-anim { opacity: 1; }
   html { scroll-behavior: auto; }
 }

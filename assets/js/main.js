@@ -102,6 +102,65 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
+  /* ── staggered card reveals + section-title sweep ─────── */
+  var staggerSelectors = [
+    ".stats", ".bento", ".skill-groups", ".pub-list",
+    ".tile-list", ".timeline", ".news-list", ".off-grid",
+    ".cert-row", ".service-venues", ".map-chips"
+  ];
+  var staggerEls = [];
+  staggerSelectors.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) { staggerEls.push(el); });
+  });
+  staggerEls.forEach(function (el) {
+    el.classList.add("stagger");
+    Array.prototype.forEach.call(el.children, function (child, i) {
+      child.style.setProperty("--i", Math.min(i, 9));
+    });
+  });
+
+  var heads = document.querySelectorAll(".section-head");
+  if (reduce || !("IntersectionObserver" in window)) {
+    staggerEls.forEach(function (el) { el.classList.add("in"); });
+    heads.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          sio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+    staggerEls.forEach(function (el) { sio.observe(el); });
+    heads.forEach(function (el) { sio.observe(el); });
+  }
+
+  /* ── hero entrance ────────────────────────────────────── */
+  if (!reduce) {
+    var heroBits = document.querySelectorAll(
+      ".hero .status-pill, .hero h1, .hero-tagline, .hero-roles, .hero-open, .hero-actions, .hero .socials, .hero-photo-wrap"
+    );
+    Array.prototype.forEach.call(heroBits, function (el, i) {
+      el.classList.add("hero-anim", "d" + Math.min(i + 1, 6));
+    });
+  }
+
+  /* ── hero photo parallax ──────────────────────────────── */
+  var heroFrame = document.querySelector(".hero-photo-frame");
+  if (heroFrame && !reduce) {
+    var parallaxTick = false;
+    window.addEventListener("scroll", function () {
+      if (parallaxTick) return;
+      parallaxTick = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY || window.pageYOffset;
+        if (y < 900) heroFrame.style.transform = "translateY(" + (y * 0.06) + "px)";
+        parallaxTick = false;
+      });
+    }, { passive: true });
+  }
+
   /* ── stat counters ────────────────────────────────────── */
   function animateCount(el) {
     var target = parseInt(el.getAttribute("data-count"), 10) || 0;
