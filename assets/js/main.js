@@ -277,20 +277,9 @@
   /* ── travels world map (jsVectorMap) ──────────────────── */
   var mapEl = document.getElementById("worldMap");
   if (mapEl && typeof jsVectorMap !== "undefined") {
-    var visited = ["DE", "CZ", "HU", "HR", "IT", "ES", "SG", "JP", "AE", "CN", "IN"];
-    var markers = [
-      { name: "Germany", coords: [51.16, 10.45] },
-      { name: "Czechia", coords: [50.08, 14.44] },
-      { name: "Hungary", coords: [47.50, 19.04] },
-      { name: "Croatia", coords: [45.10, 15.20] },
-      { name: "Italy", coords: [41.87, 12.57] },
-      { name: "Spain", coords: [40.46, -3.75] },
-      { name: "Singapore", coords: [1.35, 103.82] },
-      { name: "Japan", coords: [36.20, 138.25] },
-      { name: "UAE", coords: [23.42, 53.85] },
-      { name: "China", coords: [35.86, 104.20] },
-      { name: "India", coords: [20.59, 78.96] }
-    ];
+    var visited = ["DE", "CZ", "HU", "HR", "IT", "ES", "JP", "AE", "CN", "IN"];
+    // Singapore is too small to exist as a region, so it gets a pin instead
+    var markers = [{ name: "Singapore", coords: [1.35, 103.82] }];
     var mapInstance = null;
     var renderMap = function () {
       var cs = getComputedStyle(document.documentElement);
@@ -311,17 +300,21 @@
         },
         markers: markers,
         markerStyle: {
-          initial: { fill: accent2, stroke: "#fff", strokeWidth: 1.4, r: 5 },
-          hover: { fill: accent2, r: 7 }
+          initial: { fill: accent2, stroke: "#fff", strokeWidth: 1.4, r: 4.5 },
+          hover: { fill: accent2, r: 6 }
         },
         markersSelectable: false
       });
-      // explicitly highlight visited countries
+      // paint visited countries directly on the SVG paths
       visited.forEach(function (c) {
         var region = mapInstance.regions[c];
         if (region && region.element && region.element.setStyle) {
           region.element.setStyle("fill", accent);
         }
+        mapEl.querySelectorAll('[data-code="' + c + '"]').forEach(function (node) {
+          node.style.fill = accent;
+          node.setAttribute("fill", accent);
+        });
       });
     };
     renderMap();
