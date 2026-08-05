@@ -27,12 +27,12 @@
 
 #set page(
   paper: "a4",
-  margin: (left: mx, right: mx, top: 1.0cm, bottom: 0.85cm),
+  margin: (left: mx, right: mx, top: 1.0cm, bottom: 0.7cm),
   background: place(top + left, dx: 6.65cm, dy: 1.0cm,
     line(angle: 90deg, length: 27.3cm, stroke: 0.6pt + rgb("#C4C9C9"))),
   footer: context [
     #set text(7.3pt, fill: datecol)
-    #align(center)[Sourabrata Mukherjee · CV #h(4pt)·#h(4pt) June, 2026]
+    #align(center)[Sourabrata Mukherjee · CV #h(4pt)·#h(4pt) August, 2026]
   ],
 )
 
@@ -41,21 +41,21 @@
 
 // main section heading: Fira Sans small caps, teal, with trailing rule
 #let section(title) = {
-  v(6pt)
+  v(5pt)
   grid(columns: (auto, 1fr), column-gutter: 9pt, align: (left+horizon, left+horizon),
     text(font: display, fill: accent, weight: 400, size: 12.5pt)[#smallcaps(title)],
     line(length: 100%, stroke: 0.5pt + accent),
   )
-  v(5pt)
+  v(4pt)
 }
 
 // sidebar section heading: Fira Sans small caps, teal, with short rule
 #let side-section(title) = {
-  v(3pt)
-  text(font: display, fill: accent, weight: 400, size: 9.6pt)[#smallcaps(title)]
-  v(1pt)
+  v(2.5pt)
+  text(font: display, fill: accent, weight: 400, size: 9.4pt)[#smallcaps(title)]
+  v(0.5pt)
   line(length: 100%, stroke: 0.5pt + accent)
-  v(1.5pt)
+  v(1pt)
 }
 
 #let pill(txt) = box(
@@ -64,13 +64,13 @@
 )[#text(size: 6.6pt, fill: ink, txt)]
 
 #let langbar(name, level) = {
-  block(spacing: 2.5pt)[
-    #text(size: 8pt, name)
-    #v(1pt)
-    #grid(columns: (1fr,)*5, column-gutter: 3pt,
-      ..range(5).map(i => box(width: 100%, height: 4pt, radius: 1pt,
-        fill: if i < level { accent } else { white },
-        stroke: 0.6pt + accent)))
+  block(spacing: 3.2pt)[
+    #grid(columns: (1.55cm, 1fr), column-gutter: 4pt, align: (left + horizon, left + horizon),
+      text(size: 7.3pt, name),
+      grid(columns: (1fr,)*5, column-gutter: 2.5pt,
+        ..range(5).map(i => box(width: 100%, height: 3.4pt, radius: 1pt,
+          fill: if i < level { accent } else { white },
+          stroke: 0.55pt + accent))))
   ]
 }
 
@@ -107,7 +107,7 @@
   grid(
     columns: (1.5cm, 1fr),
     column-gutter: 0.5cm,
-    row-gutter: 1.15em,
+    row-gutter: 0.92em,
     inset: ((:), (left: 0.5cm)),
     grid.vline(x: 1, stroke: 0.9pt + accent),
     ..rows,
@@ -141,7 +141,7 @@
       [
         #stack(spacing: 7pt,
           text(font: display, fill: white, size: 27pt, hyphenate: false)[#text(weight: 300)[Sourabrata] #text(weight: 500)[Mukherjee]],
-          text(font: display, fill: subcol, weight: 400, size: 10pt)[#smallcaps[NLP–LLM Researcher] #h(2pt)·#h(2pt) #smallcaps[Applied AI]],
+          text(font: display, fill: subcol, weight: 400, size: 10pt)[#smallcaps[Research Scientist] #h(2pt)·#h(2pt) #smallcaps[Applied Scientist] #h(2pt)·#h(2pt) #smallcaps[NLP – LLMs]],
         )
       ],
       [
@@ -172,36 +172,48 @@
   // ---------- left sidebar ----------
   [
     #align(center)[
-      #box(width: 3.3cm, height: 3.3cm, radius: 50%, clip: true, stroke: 1.5pt + accent, fill: white)[
-        #place(top + center, dy: 0.18cm)[
-          #image("pics/profile.jpg", width: 3.05cm)
+      #box(width: 2.75cm, height: 2.75cm, radius: 50%, clip: true, stroke: 1.5pt + accent, fill: white)[
+        #place(top + center, dy: 0.15cm)[
+          #image("pics/profile.jpg", width: 2.55cm)
         ]
       ]
     ]
-    #v(3pt)
+    #v(2pt)
 
     #side-section[About me]
     #text(size: 7.3pt)[
-      NLP–LLMs researcher and engineer who turns research into working
-      systems. Postdoctoral Researcher at Microsoft Research; PhD from
-      Charles University, Prague; 6+ years building production ML, bridging
-      research and engineering under real-world constraints.
+      Research scientist and engineer working on LLM training, alignment,
+      interpretability, and evaluation. Postdoctoral Researcher at Microsoft
+      Research; PhD from Charles University, Prague; 6+ years shipping
+      production ML under real-world constraints.
     ]
 
     #side-section[Research Interests]
     #set text(size: 7.3pt)
     - LLM Evaluation & LLM-as-Judge
-    - Controllable Text Generation
-    - Text Style Transfer
+    - Post-training & Alignment
+    - Mechanistic Interpretability
     - Multilingual & Cultural NLP
-    - Reasoning
-    - Agentic Development
+    - Controllable Generation
+    - Reasoning & Agentic Systems
 
     #side-section[Skills & Knowledge]
-    #pill[Python] #pill[PyTorch] #pill[NLP] #pill[LLMs]
-    #pill[Machine Learning] #pill[Multilingual NLP] #pill[Text Generation]
-    #pill[Evaluation] #pill[Hugging Face] #pill[Distributed Training]
-    #pill[RLHF / Alignment] #pill[Interpretability]
+    #text(size: 6.9pt, weight: 600, fill: accent)[Training & Alignment] #v(1.5pt, weak: true)
+    #pill[Full fine-tuning] #pill[PEFT / LoRA] #pill[Instruction tuning]
+    #pill[DPO] #pill[PPO] #pill[GRPO] #pill[RLHF] #pill[Reward modelling]
+    #v(3pt, weak: true)
+    #text(size: 6.9pt, weight: 600, fill: accent)[Interpretability & Evaluation] #v(1.5pt, weak: true)
+    #pill[Mechanistic interpretability] #pill[Probing] #pill[LLM-as-Judge]
+    #pill[Benchmark design] #pill[Human evaluation] #pill[Calibration]
+    #v(3pt, weak: true)
+    #text(size: 6.9pt, weight: 600, fill: accent)[Engineering] #v(1.5pt, weak: true)
+    #pill[Python] #pill[PyTorch] #pill[Hugging Face] #pill[vLLM]
+    #pill[Distributed training] #pill[RAG & agents]
+
+    #side-section[Service]
+    #text(size: 7.3pt)[
+      Reviewer · #text(weight: 600)[ACL, EMNLP, NeurIPS, ICLR, COLM, INLG]
+    ]
 
     #side-section[Languages]
     #langbar("Bengali", 5)
@@ -210,10 +222,10 @@
     #langbar("Czech", 1)
     #langbar("German", 1)
 
-    #v(2pt)
+    #v(1pt)
     #side-section[Awards]
     #set text(size: 7.3pt)
-    #set list(spacing: 2.5pt)
+    #set list(spacing: 2pt)
     - #text(weight: 600)[Best Paper Award] · BLP \@ EMNLP 2023
     - #text(weight: 600)[CU Grant Agency Award] · as PI
     - #text(weight: 600)[Star Employee of the Year] · Amdocs & Tricon
@@ -221,7 +233,7 @@
 
     #side-section[Certification]
     #set text(size: 7.3pt)
-    #set list(spacing: 2pt)
+    #set list(spacing: 1.5pt)
     - Generative AI with LLMs
     - Deep Neural Networks & Tuning
     - Machine Learning & Statistics
@@ -233,7 +245,7 @@
     #timeline((
       (date: [since 07/2025], title: "Postdoctoral Researcher",
        org: "Microsoft Research", loc: "Bengaluru, India",
-       desc: "Multilingual NLP, LLM evaluation, and controllable generation for Language AI."),
+       desc: "LLM evaluation, multilingual NLP, alignment, and controllable generation for Language AI."),
       (date: [from 07/2024 #linebreak() to 03/2025], title: "Visiting Researcher",
        org: "MBZUAI", loc: "Abu Dhabi, UAE",
        desc: "Cultural and cross-lingual dimensions of large language models."),
@@ -287,22 +299,22 @@
        )),
     ))
 
-    #v(5pt)
+    #v(4pt)
     #grid(columns: (auto, auto, 1fr), column-gutter: 7pt, align: (left+horizon, left+horizon, left+horizon),
       text(font: display, fill: accent, weight: 400, size: 12.5pt)[#smallcaps[Selected Publications]],
       link("https://scholar.google.com/citations?user=sYNjrdsAAAAJ")[#text(fill: accent, size: 7.3pt)[#fa-google-scholar() #h(2pt)#text(weight: 500)[View all] #fa-arrow-up-right-from-square(size: 0.75em)]],
       line(length: 100%, stroke: 0.5pt + accent),
     )
-    #v(4pt)
-    #grid(columns: (1.5cm, 1fr), column-gutter: 0.5cm, row-gutter: 0.8em,
+    #v(3pt)
+    #grid(columns: (1.5cm, 1fr), column-gutter: 0.5cm, row-gutter: 0.62em,
       inset: ((:), (left: 0.5cm)),
       grid.vline(x: 1, stroke: 0.9pt + accent),
       [], publ("Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings", "CHI 26", note: "Honorable Mention"),
       [], publ("Women, Infamous, and Exotic Beings: A Comparative Study of Honorific Usages in Wikipedia and LLMs for Bengali and Hindi", "EMNLP Main 25"),
-      [], publ("Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use", "COLM 26", note: "Communicated"),
+      [], publ("Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use", "COLM 26", note: "Spotlight · Top 15%"),
       [], publ("The Geometry of LLM-as-Judge: Why Inter-LLM Consensus Is Not Human Alignment", "EMNLP 26", note: "Communicated"),
-      [], publ("Are Large Language Models Actually Good at Text Style Transfer?", "INLG 25"),
-      [], publ("Evaluating Text Style Transfer Evaluation: Are There Any Reliable Metrics?", "NAACL – SRW 25"),
+      [], publ("Opening the Judge: What LLM Evaluators Compute but Do Not Report", "EACL 26", note: "Communicated"),
+      [], publ("Evaluation Is Training: Confidence Outruns Correctness When the Judge Is the Target", "EACL 26", note: "Communicated"),
     )
   ],
 )

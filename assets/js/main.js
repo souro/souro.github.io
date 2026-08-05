@@ -68,10 +68,11 @@
 
   /* ── skills marquee (build seamless loop) ─────────────── */
   var skills = [
-    "Python", "PyTorch", "NLP", "LLMs", "Machine Learning",
-    "Multilingual NLP", "Text Generation", "Evaluation",
-    "Hugging Face", "Distributed Training", "RLHF / Alignment",
-    "Interpretability", "Transformers", "Prompt Engineering"
+    "Python", "PyTorch", "LLM Post-training", "Full Fine-tuning",
+    "PEFT / LoRA", "DPO", "PPO", "GRPO", "RLHF / Alignment",
+    "Mechanistic Interpretability", "LLM-as-Judge", "Evaluation",
+    "Multilingual NLP", "Agentic Systems", "Hugging Face",
+    "Distributed Training", "vLLM", "Transformers"
   ];
   var track = document.getElementById("skillTrack");
   if (track) {
@@ -202,7 +203,8 @@
       "PhD · Charles University",
       "Microsoft Research · Postdoctoral Researcher",
       "6+ years of ML engineering",
-      "8+ years of research experience"
+      "8+ years of research experience",
+      "Reviewer · ACL, EMNLP, NeurIPS, ICLR"
     ];
     var beltBuild = function () {
       return beltItems.map(function (s) {

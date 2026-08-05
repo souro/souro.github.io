@@ -235,7 +235,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: clamp(0.5rem, 1.6vw, 1.5rem);
 }
 .nav-brand {
   font-family: var(--serif);
@@ -271,7 +271,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 }
 .nav-brand .mark {
   font-family: "Dancing Script", "Segoe Script", cursive;
-  font-size: 2.2rem;
+  font-size: clamp(1.75rem, 1vw + 1.2rem, 2.2rem);
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -287,14 +287,14 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .nav-brand:hover .mark { filter: drop-shadow(0 2px 8px var(--halo-1)); }
 .nav-links {
   display: flex;
-  gap: 0.4rem;
+  gap: clamp(0.05rem, 0.4vw, 0.35rem);
   align-items: center;
-  font-size: 0.88rem;
+  font-size: clamp(0.78rem, 0.5vw + 0.44rem, 0.88rem);
 }
 .nav-links > a {
   color: var(--ink-soft);
   position: relative;
-  padding: 0.4rem 0.85rem;
+  padding: 0.4rem clamp(0.3rem, 0.55vw, 0.8rem);
   border-radius: 8px;
   white-space: nowrap;
   transition: color var(--t-fast), background var(--t-fast);
@@ -564,10 +564,23 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 @media (min-width: 640px) { .stats { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 980px) { .stats { grid-template-columns: repeat(5, 1fr); } }
 .stat {
+  position: relative;
   background: var(--bg-elev);
   padding: 1.5rem 1.2rem;
   text-align: center;
+  transition: background var(--t-fast) var(--ease);
 }
+.stat::after {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 0; height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--accent), var(--accent-3));
+  transition: width var(--t-med) var(--ease);
+}
+.stat:hover { background: color-mix(in srgb, var(--accent) 4%, var(--bg-elev)); }
+.stat:hover::after { width: 60%; }
 .stat-num {
   font-family: var(--serif);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -679,6 +692,120 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 }
 .skill-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
+/* ─── capability groups ──────────────────────────────────── */
+.skill-groups {
+  margin-top: 2.2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) { .skill-groups { grid-template-columns: 1fr 1fr; } }
+.skill-group {
+  padding: 1.15rem 1.25rem 1.3rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-med), transform var(--t-fast) var(--ease);
+}
+.skill-group:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
+  box-shadow: var(--shadow-md);
+}
+.skill-group h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.85rem;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.sg-ico {
+  display: grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+}
+.sg-ico svg { width: 15px; height: 15px; }
+.sg-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.sg-pills span {
+  padding: 0.32rem 0.7rem;
+  border-radius: 7px;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule-soft);
+  font-size: 0.79rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ─── academic service ───────────────────────────────────── */
+.service-card {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.2rem 1.35rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+.service-head { display: flex; align-items: center; gap: 0.85rem; }
+.service-ico {
+  display: grid;
+  place-items: center;
+  width: 38px; height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+.service-ico svg { width: 19px; height: 19px; }
+.service-head h3 { font-family: var(--sans); font-size: 1rem; font-weight: 650; margin: 0 0 0.15rem; }
+.service-head p { font-size: 0.86rem; color: var(--ink-mute); margin: 0; }
+.service-venues { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.service-venues span {
+  padding: 0.34rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--rule));
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
+/* ─── open-to-roles line ─────────────────────────────────── */
+.hero-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 42%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.hero-open strong { color: var(--accent); font-weight: 650; }
+.open-dot {
+  width: 7px; height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
 /* ─── news ───────────────────────────────────────────────── */
 .news-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
 .news-list li {
@@ -714,8 +841,20 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   background: var(--bg-elev);
   border: 1px solid var(--rule);
   border-radius: var(--radius-sm);
+  overflow: hidden;
   transition: transform var(--t-fast) var(--ease), border-color var(--t-fast), box-shadow var(--t-med);
 }
+.pub::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-3));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--t-med) var(--ease);
+}
+.pub:hover::before { transform: scaleY(1); }
 .pub:hover { transform: translateX(4px); border-color: color-mix(in srgb, var(--accent) 40%, var(--rule)); box-shadow: var(--shadow-md); }
 .pub-num {
   font-family: var(--mono);
