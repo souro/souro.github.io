@@ -145,15 +145,16 @@
         )
       ],
       [
-        #set text(font: body, weight: 300, fill: white, size: 8.4pt)
+        #set text(font: body, weight: 300, fill: white, size: 8.2pt)
         #pad(left: 14pt)[
-          #grid(columns: (auto, auto), column-gutter: 20pt, row-gutter: 7.5pt,
+          #grid(columns: (auto, auto), column-gutter: 18pt, row-gutter: 5pt,
             icon-txt(fa-location-dot(), [Bengaluru, India]),
             icon-txt(fa-linkedin(), link("https://www.linkedin.com/in/souro")[in/souro]),
             icon-txt(fa-globe(), link("https://souro.github.io")[souro.github.io]),
             icon-txt(fa-graduation-cap(), link("https://scholar.google.com/citations?user=sYNjrdsAAAAJ")[Google Scholar]),
-            icon-txt(fa-envelope(), link("mailto:soura1990@gmail.com")[soura1990\@gmail.com]),
+            icon-txt(fa-envelope(), link("mailto:connect.souro@gmail.com")[connect.souro\@gmail.com]),
             icon-txt(fa-github(), link("https://github.com/souro")[souro]),
+            icon-txt(fa-robot(), link("https://huggingface.co/Souro")[huggingface.co/Souro]),
           )
         ]
       ],
@@ -261,7 +262,7 @@
       (date: [from 02/2018 #linebreak() to 08/2018], title: "Data Science Visiting Intern",
        org: "Indian Institute of Science (IISc)", loc: "Bengaluru, India",
        desc: "Time-series forecasting and predictive analytics."),
-      (date: [from 06/2017 #linebreak() to 09/2019], title: "Senior ML Engineer → Tech Lead",
+      (date: [from 06/2017 #linebreak() to 09/2019], title: "Senior ML Engineer → AI Tech Lead",
        org: "Tricon Infotech", loc: "Bengaluru, India",
        desc: "Product- and domain-specific recommendation engine at scale."),
       (date: [from 04/2016 #linebreak() to 05/2017], title: "Senior Data Engineer",
