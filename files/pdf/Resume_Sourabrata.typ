@@ -137,7 +137,7 @@
 // =============================================================
 #place(top + left, dx: -mx, dy: -1.0cm, float: false,
   block(width: pagew, height: 2.95cm, fill: headerbg, inset: (left: mx, right: mx, top: 0.55cm, bottom: 0.45cm))[
-    #grid(columns: (1.12fr, 1fr), align: (left + horizon, left + horizon), column-gutter: 8pt,
+    #grid(columns: (1.15fr, 1fr), align: (left + horizon, left + horizon), column-gutter: 10pt,
       [
         #stack(spacing: 7pt,
           text(font: display, fill: white, size: 27pt, hyphenate: false)[#text(weight: 300)[Sourabrata] #text(weight: 500)[Mukherjee]],
@@ -145,16 +145,16 @@
         )
       ],
       [
-        #set text(font: body, weight: 300, fill: white, size: 7.9pt)
-        #pad(left: 8pt)[
-          #grid(columns: (auto, auto), column-gutter: 14pt, row-gutter: 5pt,
+        #set text(font: body, weight: 300, fill: white, size: 8.2pt)
+        #pad(left: 14pt)[
+          #grid(columns: (auto, auto), column-gutter: 20pt, row-gutter: 5.5pt,
             icon-txt(fa-location-dot(), [Bengaluru, India]),
-            icon-txt(fa-linkedin(), link("https://www.linkedin.com/in/souro")[in/souro]),
+            icon-txt(fa-linkedin(), link("https://www.linkedin.com/in/souro")[LinkedIn]),
             icon-txt(fa-globe(), link("https://souro.github.io")[Personal Website]),
             icon-txt(fa-graduation-cap(), link("https://scholar.google.com/citations?user=sYNjrdsAAAAJ")[Google Scholar]),
-            icon-txt(fa-envelope(), link("mailto:connect.souro@gmail.com")[connect.souro\@gmail.com]),
-            icon-txt(fa-github(), link("https://github.com/souro")[souro]),
-            icon-txt(fa-envelope(), link("mailto:sourabrata.mukhergeek@gmail.com")[sourabrata.mukhergeek\@gmail.com]),
+            icon-txt(fa-envelope(), link("mailto:connect.souro@gmail.com")[Email]),
+            icon-txt(fa-github(), link("https://github.com/souro")[GitHub]),
+            icon-txt(fa-envelope(), link("mailto:sourabrata.mukhergeek@gmail.com")[Alternate Email]),
             box[#box(baseline: 1.5pt, image("pics/hf.svg", height: 8pt)) #h(3pt) #link("https://huggingface.co/Souro")[Hugging Face]],
           )
         ]
