@@ -485,6 +485,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 }
 .socials a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .socials svg { width: 17px; height: 17px; }
+.socials a[aria-label="Hugging Face"] svg { width: 20px; height: 20px; }
 
 /* hero photo */
 .hero-photo-wrap { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -1045,6 +1046,19 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .cta-band h2 .grad,
 .cta-band .accent { color: var(--accent); }
 .cta-band p { color: var(--ink-soft); position: relative; max-width: 52ch; margin: 0 auto 1.6rem; }
+.cta-band p.cta-mails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: none;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  margin-top: -0.7rem;
+}
+.cta-mails a { color: var(--accent); border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+.cta-mails a:hover { border-bottom-color: var(--accent); }
+.cta-mails .sep { color: var(--ink-mute); }
 .cta-actions { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
 /* ─── "coming soon" cards (Talks / Blog) ─────────────────── */
