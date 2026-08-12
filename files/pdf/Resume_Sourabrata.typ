@@ -311,7 +311,7 @@
     #grid(columns: (1.5cm, 1fr), column-gutter: 0.5cm, row-gutter: 0.62em,
       inset: ((:), (left: 0.5cm)),
       grid.vline(x: 1, stroke: 0.9pt + accent),
-      [], publ("Actions Speak Louder than Words: On the Cross-Lingual Invariance of Agentic Tool Use", "COLM 26", note: "Reviewers' Spotlight · Top 15%"),
+      [], publ("Actions Speak Louder than Words: Measuring Cross-Lingual Policy Retention in Tool-Using Agents", "COLM 26", note: "Reviewers' Spotlight · Top 15%"),
       [], publ("Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings", "CHI 26", note: "Honorable Mention"),
       [], publ("Women, Infamous, and Exotic Beings: A Comparative Study of Honorific Usages in Wikipedia and LLMs for Bengali and Hindi", "EMNLP Main 25"),
       [], publ("The Geometry of LLM-as-Judge: Why Inter-LLM Consensus Is Not Human Alignment", "EMNLP 26", note: "Communicated"),
