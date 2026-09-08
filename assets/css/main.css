@@ -1085,6 +1085,100 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .soon-card h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 0 0 0.2rem; }
 .soon-card p { margin: 0; font-size: 0.92rem; color: var(--ink-mute); }
 
+/* ─── slide deck card ────────────────────────────────────── */
+.deck-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--t-fast), box-shadow var(--t-med), transform var(--t-fast) var(--ease);
+}
+.deck-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--rule));
+  box-shadow: var(--shadow-md);
+}
+@media (min-width: 820px) { .deck-card { grid-template-columns: 1.05fr 1fr; } }
+.deck-cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 1.4rem;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+@media (min-width: 820px) {
+  .deck-cover { border-bottom: none; border-right: 1px solid var(--rule); }
+}
+.deck-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--t-slow) var(--ease-out);
+}
+.deck-cover:hover img { transform: scale(1.02); }
+.deck-play {
+  position: absolute;
+  right: 0.85rem; bottom: 0.85rem;
+  display: grid; place-items: center;
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  color: #fff;
+  background: color-mix(in srgb, var(--accent) 92%, #000);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--t-fast), transform var(--t-fast) var(--ease);
+}
+.deck-cover:hover .deck-play, .deck-cover:focus-visible .deck-play { opacity: 1; transform: none; }
+.deck-play svg { width: 17px; height: 17px; }
+.deck-body { padding: 1.6rem 1.7rem 1.7rem; }
+.deck-tag {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.deck-body h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+.deck-body p { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 1rem; }
+.deck-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+}
+.deck-meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.deck-meta svg { width: 15px; height: 15px; color: var(--accent); }
+.deck-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
 /* ─── Off the clock ──────────────────────────────────────── */
 .off-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
 @media (min-width: 640px) { .off-grid { grid-template-columns: 1fr 1fr; } }
