@@ -1086,6 +1086,7 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .soon-card p { margin: 0; font-size: 0.92rem; color: var(--ink-mute); }
 
 /* ─── slide deck card ────────────────────────────────────── */
+.deck-list { display: flex; flex-direction: column; gap: 1.2rem; }
 .deck-card {
   display: grid;
   grid-template-columns: 1fr;

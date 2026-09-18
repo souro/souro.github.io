@@ -106,7 +106,7 @@
   var staggerSelectors = [
     ".stats", ".bento", ".skill-groups", ".pub-list",
     ".tile-list", ".timeline", ".news-list", ".off-grid",
-    ".cert-row", ".service-venues", ".map-chips"
+    ".cert-row", ".service-venues", ".map-chips", ".deck-list"
   ];
   var staggerEls = [];
   staggerSelectors.forEach(function (sel) {
