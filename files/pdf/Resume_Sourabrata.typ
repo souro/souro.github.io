@@ -245,22 +245,22 @@
   [
     #section("Research & Software Development")
     #timeline((
-      (date: [since 07/2025], title: "Postdoctoral Researcher",
+      (date: [since 2025], title: "Postdoctoral Researcher",
        org: "Microsoft Research", loc: "Bengaluru, India",
        desc: "LLM evaluation, multilingual NLP, alignment, and controllable generation for Language AI."),
-      (date: [from 07/2024 #linebreak() to 03/2025], title: "Visiting Researcher",
+      (date: [from 2024 #linebreak() to 2025], title: "Visiting Researcher",
        org: "MBZUAI", loc: "Abu Dhabi, UAE",
        desc: "Cultural and cross-lingual dimensions of large language models."),
-      (date: [from 01/2022 #linebreak() to 06/2022], title: "Research Intern",
+      (date: [2022], title: "Research Intern",
        org: "Panlingua Language Processing", loc: "New Delhi, India",
        desc: "Low-resource machine translation for Indian languages."),
-      (date: [from 10/2019 #linebreak() to 04/2025], title: "PhD Researcher",
+      (date: [from 2019 #linebreak() to 2025], title: "PhD Researcher",
        org: "UFAL, Charles University", loc: "Prague, Czechia",
        desc: "Research on Text Style Transfer with neural language models."),
-      (date: [from 12/2018 #linebreak() to 05/2019], title: "Research Assistant",
+      (date: [from 2018 #linebreak() to 2019], title: "Research Assistant",
        org: "UKP Lab, TU Darmstadt", loc: "Darmstadt, Germany",
        desc: "Context detection for scientific data-to-text generation."),
-      (date: [from 02/2018 #linebreak() to 08/2018], title: "Data Science Visiting Intern",
+      (date: [2018], title: "Data Science Visiting Intern",
        org: "Indian Institute of Science (IISc)", loc: "Bengaluru, India",
        desc: "Time-series forecasting and predictive analytics."),
       (date: [from 2016 #linebreak() to 2019], title: "Senior ML Engineer → AI Tech Lead",
@@ -269,17 +269,17 @@
       (date: [2016], title: "Senior Big Data Engineer",
        org: "Avaya", loc: "Bengaluru, India",
        desc: "Log-analysis pipeline with optimized storage and real-time monitoring."),
-      (date: [from 05/2015 #linebreak() to 03/2016], title: "Senior Analytics Engineer",
+      (date: [from 2015 #linebreak() to 2016], title: "Senior Analytics Engineer",
        org: "o9 Solutions", loc: "Bengaluru, India",
        desc: "Scalable enterprise planning recommendation framework."),
-      (date: [from 01/2014 #linebreak() to 04/2015], title: "Software → Senior Software Engineer",
+      (date: [from 2014 #linebreak() to 2015], title: "Software → Senior Software Engineer",
        org: "Amdocs", loc: "Pune, India",
        desc: "Recommendation engine and search for e-commerce platforms."),
     ))
 
     #section("Education")
     #timeline((
-      (date: [from 10/2019 #linebreak() to 04/2025], title: "PhD in Computational Linguistics",
+      (date: [from 2019 #linebreak() to 2025], title: "PhD in Computational Linguistics",
        org: "Charles University", loc: "Prague, Czechia",
        bullets: (
          [#text(weight: 600)[Thesis:] Text Style Transfer using Neural Models],
