@@ -32,7 +32,7 @@
     line(angle: 90deg, length: 27.3cm, stroke: 0.6pt + rgb("#C4C9C9"))),
   footer: context [
     #set text(7.3pt, fill: datecol)
-    #align(center)[Sourabrata Mukherjee · CV #h(4pt)·#h(4pt) August, 2026]
+    #align(center)[Sourabrata Mukherjee · CV #h(4pt)·#h(4pt) September, 2026]
   ],
 )
 
@@ -125,7 +125,7 @@
     circle(radius: 2.8pt, fill: accent, stroke: none))
   #text(font: body, weight: 500, size: 7.9pt, fill: ink)[#title]
   #linebreak()
-  #text(size: 7.4pt)[#smallcaps(venue)#if note != none [#if note == "Communicated" [ #text(size: 6.6pt, style: "italic", fill: datecol)[(#note)]] else [ · #note]]]
+  #text(size: 7.4pt)[#if venue != "" [#smallcaps(venue)]#if note != none [#if note == "Communicated" [#if venue != "" [ #text(size: 6.6pt, style: "italic", fill: datecol)[(#note)]] else [#text(size: 7pt, style: "italic", fill: datecol)[#note]]] else [ · #note]]]
 ]
 
 // small filled teal dot for the publications timeline
@@ -263,10 +263,10 @@
       (date: [from 02/2018 #linebreak() to 08/2018], title: "Data Science Visiting Intern",
        org: "Indian Institute of Science (IISc)", loc: "Bengaluru, India",
        desc: "Time-series forecasting and predictive analytics."),
-      (date: [from 06/2017 #linebreak() to 09/2019], title: "Senior ML Engineer → AI Tech Lead",
+      (date: [from 2016 #linebreak() to 2019], title: "Senior ML Engineer → AI Tech Lead",
        org: "Tricon Infotech", loc: "Bengaluru, India",
        desc: "Product- and domain-specific recommendation engine at scale."),
-      (date: [from 04/2016 #linebreak() to 05/2017], title: "Senior Big Data Engineer",
+      (date: [2016], title: "Senior Big Data Engineer",
        org: "Avaya", loc: "Bengaluru, India",
        desc: "Log-analysis pipeline with optimized storage and real-time monitoring."),
       (date: [from 05/2015 #linebreak() to 03/2016], title: "Senior Analytics Engineer",
@@ -315,8 +315,8 @@
       [], publ("Actions Speak Louder than Words: Measuring Cross-Lingual Policy Retention in Tool-Using Agents", "COLM 26", note: "Reviewers' Spotlight · Top 15%"),
       [], publ("Building Benchmarks from the Ground Up: Community-Centered Evaluation of LLMs in Healthcare Chatbot Settings", "CHI 26", note: "Honorable Mention"),
       [], publ("Women, Infamous, and Exotic Beings: A Comparative Study of Honorific Usages in Wikipedia and LLMs for Bengali and Hindi", "EMNLP 25"),
-      [], publ("Opening the Judge: What LLM Evaluators Compute but Do Not Report", "EACL 26", note: "Communicated"),
-      [], publ("Evaluation Is Training: Confidence Outruns Correctness When the Judge Is the Target", "EACL 26", note: "Communicated"),
+      [], publ("Opening the Judge: What LLM Evaluators Compute but Do Not Report", "", note: "Communicated"),
+      [], publ("Evaluation Is Training: Confidence Outruns Correctness When the Judge Is the Target", "", note: "Communicated"),
     )
   ],
 )
