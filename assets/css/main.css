@@ -1050,15 +1050,30 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.5rem 1.4rem;
   max-width: none;
   font-family: var(--mono);
   font-size: 0.84rem;
   margin-top: -0.7rem;
 }
+.mail-item { display: inline-flex; align-items: center; gap: 0.5rem; }
+.mail-label {
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--accent);
+}
+.mail-label.alt {
+  background: var(--bg-soft);
+  border-color: var(--rule);
+  color: var(--ink-mute);
+}
 .cta-mails a { color: var(--accent); border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
 .cta-mails a:hover { border-bottom-color: var(--accent); }
-.cta-mails .sep { color: var(--ink-mute); }
 .cta-actions { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
 /* ─── "coming soon" cards (Talks / Blog) ─────────────────── */
