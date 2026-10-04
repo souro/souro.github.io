@@ -890,6 +890,17 @@ section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
 .pub-badge.award { background: color-mix(in srgb, var(--accent-2) 16%, transparent); color: var(--accent-2); border: 1px solid color-mix(in srgb, var(--accent-2) 32%, transparent); }
 .pub-badge.year { background: var(--bg-soft); color: var(--ink-mute); border: 1px solid var(--rule-soft); }
 .pub-badge.soon { background: color-mix(in srgb, var(--accent-3) 16%, transparent); color: var(--accent-3); border: 1px solid color-mix(in srgb, var(--accent-3) 32%, transparent); }
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.pub-link:hover { border-bottom-color: var(--accent); }
 
 .view-all {
   display: inline-flex;
